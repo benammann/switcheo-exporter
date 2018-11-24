@@ -7,12 +7,12 @@ import { Route, Switch } from 'react-router'
 import { ConnectedRouter } from 'connected-react-router'
 import { store, history } from './store';
 
-import App from './App'
+import HomePage from './pages/home'
 
 ReactDOM.render(<Provider store={store}>
     <ConnectedRouter history={history}>
             <Switch>
-                <Route exact path="/" component={App} />
+                <Route exact path="/" component={HomePage} />
             </Switch>
     </ConnectedRouter>
 </Provider>, document.getElementById('root'));
