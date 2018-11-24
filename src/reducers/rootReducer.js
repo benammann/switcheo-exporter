@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import switcheoReducer from './switcheo/switcheoReducer'
-import layoutReducer from './layout/layoutReducer'
+import switcheo from './switcheo/switcheoReducer'
+import layout from './layout/layoutReducer'
 
 export default combineReducers({
-    switcheo: switcheoReducer,
-    layout: layoutReducer,
+    switcheo,
+    layout,
 })
