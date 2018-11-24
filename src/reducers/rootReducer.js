@@ -4,9 +4,11 @@ import { connectRouter } from 'connected-react-router';
 
 import switcheo from './switcheo/switcheoReducer'
 import layout from './layout/layoutReducer'
+import address from './address/addressReducer'
 
 export default (history) => combineReducers({
     router: connectRouter(history),
     switcheo,
     layout,
+    address,
 });

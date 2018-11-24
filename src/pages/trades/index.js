@@ -5,12 +5,24 @@ import { connect } from 'react-redux';
 
 import { fetchContracts } from "../../actions/switcheo/fetchContracts";
 import { fetchTokens } from "../../actions/switcheo/fetchTokens";
+import { setAddress } from "../../actions/address/setAddress";
+import { isAddressValid } from "../../helpers/isAddressValid";
+import { raiseError } from "../../actions/layout/raiseError";
 
 class TradesPage extends Component {
 
     componentDidMount() {
         this.props.fetchContracts();
         this.props.fetchTokens();
+
+        const address = this.props.match.params.address
+        if(isAddressValid(address)) {
+            this.props.setAddress(address)
+        } else {
+            this.props.raiseError(`Please enter a valid NEO, ETH or QTUM address`);
+            this.props.history.push("/")
+        }
+
     }
 
     render() {
@@ -18,7 +30,7 @@ class TradesPage extends Component {
             <div>
                 <h3>Trades Made</h3>
                 <p>Address: {this.props.match.params.address}</p>
-                <p>{JSON.stringify(this.props.switcheo)}</p>
+                <p>{JSON.stringify(this.props.address)}</p>
             </div>
         )
     }
@@ -30,7 +42,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     fetchContracts,
-    fetchTokens
+    fetchTokens,
+    setAddress,
+    raiseError
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(TradesPage);

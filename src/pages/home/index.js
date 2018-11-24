@@ -16,6 +16,7 @@ import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 
 import { isAddressValid} from "../../helpers/isAddressValid";
+import { resetAddress } from "../../actions/address/resetAddress";
 
 const styles = theme => ({
     main: {
@@ -36,6 +37,14 @@ const styles = theme => ({
         flexDirection: 'column',
         alignItems: 'center',
         padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
+    },
+    errorDialog: {
+        marginTop: theme.spacing.unit * 8,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
+        backgroundColor: 'red'
     },
     avatar: {
         margin: theme.spacing.unit,
@@ -58,6 +67,10 @@ class HomePage extends Component {
             address: '',
             isValid: false,
         }
+    }
+
+    componentDidMount() {
+        this.props.resetAddress()
     }
 
     /**
@@ -83,7 +96,6 @@ class HomePage extends Component {
             this.props.history.push(`/trades/${this.state.address}`)
         }
     };
-
 
     render() {
         return (
@@ -126,7 +138,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-
+    resetAddress
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(HomePage));
