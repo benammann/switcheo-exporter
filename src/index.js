@@ -2,17 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
-import { Provider } from 'react-redux'
-import { Route, Switch } from 'react-router'
-import { ConnectedRouter } from 'connected-react-router'
+import { Provider } from 'react-redux';
+import { Route, Switch } from 'react-router';
+import { ConnectedRouter } from 'connected-react-router';
 import { store, history } from './store';
 
 import HomePage from './pages/home'
+import TradesPage from './pages/trades'
 
 ReactDOM.render(<Provider store={store}>
     <ConnectedRouter history={history}>
             <Switch>
-                <Route exact path="/" component={HomePage} />
+                <Route exact path={"/"} component={HomePage} />
+                <Route path={"/trades/:address"} component={TradesPage} />
             </Switch>
     </ConnectedRouter>
 </Provider>, document.getElementById('root'));
