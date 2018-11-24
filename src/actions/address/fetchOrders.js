@@ -1,6 +1,8 @@
 import { ADDRESS_FETCH_ORDERS } from "./actions";
 import { LAYOUT_RAISE_ERROR } from "../layout/actions";
 
+import { convertOrders } from "../../helpers/convertOrders";
+
 export const fetchOrders = () => (dispatch, getState) => {
     const {addressHashed, addressType} = getState().address;
 
@@ -16,6 +18,7 @@ export const fetchOrders = () => (dispatch, getState) => {
 
                     //merge orders from multiple contracts
                     orders = [].concat.apply([], orders);
+                    orders = convertOrders(orders, getState().switcheo.tokens, getState().switcheo.contracts);
 
                     return dispatch({
                         type: ADDRESS_FETCH_ORDERS,
