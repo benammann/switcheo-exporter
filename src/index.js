@@ -10,12 +10,17 @@ import { store, history } from './store';
 import HomePage from './pages/home'
 import TradesPage from './pages/trades'
 
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import {theme} from './theme'
+
 ReactDOM.render(<Provider store={store}>
     <ConnectedRouter history={history}>
+        <MuiThemeProvider theme={theme}>
             <Switch>
                 <Route exact path={"/"} component={HomePage} />
                 <Route path={"/trades/:address"} component={TradesPage} />
             </Switch>
+        </MuiThemeProvider>
     </ConnectedRouter>
 </Provider>, document.getElementById('root'));
 
