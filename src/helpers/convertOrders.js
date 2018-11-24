@@ -53,26 +53,6 @@ export const convertOrders = (orders, tokens, contracts) => {
 
             if (blockchain === symbols.NEO || blockchain === symbols.ETH || blockchain === symbols.QTUM) {
 
-                /**
-                 *
-                 * Rule: Each fill or make creates an entry in the csv
-                 *
-                 *
-                 * Date -> fillormake.created_at
-                 * Address -> neon.fromScriptHash(order.address)
-                 * Blockchain -> upper(order.blockchain)
-                 * Contract Version contracts[contract] -> key to upper
-                 * Market -> order.pair.replace('_', '/')
-                 * Type -> order.side
-                 *
-                 * Price -> fillormake.price
-                 * Amount  -> fillormake.fill_amount
-                 * Total -> price * amount
-                 * Fee Paid -> fillormake.fee_amount
-                 * Fee Token -> fillormake.tokens[fillormake.fee_asset_id]
-                 *
-                 */
-
                 const addressHash = order.address;
                 const contractHash = order.contract_hash;
                 const {pair, side} = order;
@@ -133,7 +113,7 @@ export const convertOrders = (orders, tokens, contracts) => {
                 })
 
             } else {
-                //Do nothing, ignore order
+               //invalid blockchain type
             }
 
         }
