@@ -1,12 +1,16 @@
+import update from 'immutability-helper'
+
 import {
     ADDRESS_SET,
-    ADDRESS_RESET
+    ADDRESS_RESET,
+    ADDRESS_FETCH_ORDERS,
 } from '../../actions/address/actions'
 
 const initialState = {
     address: '',
     addressHashed: '',
-    addressType: ''
+    addressType: '',
+    orders: []
 };
 
 /**
@@ -22,9 +26,16 @@ export default (address = initialState, action) => {
                 address: action.address,
                 addressHashed: action.addressHashed,
                 addressType: action.addressType,
+                orders: []
             };
         case ADDRESS_RESET:
             return initialState;
+        case ADDRESS_FETCH_ORDERS:
+            return update(address, {
+                orders: {
+                    $set: action.orders,
+                },
+            });
         default:
             return address
     }

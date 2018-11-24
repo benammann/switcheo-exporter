@@ -9,13 +9,15 @@ import { setAddress } from "../../actions/address/setAddress";
 import { isAddressValid } from "../../helpers/isAddressValid";
 import { raiseError } from "../../actions/layout/raiseError";
 
+import { fetchOrders } from "../../actions/address/fetchOrders";
+
 class TradesPage extends Component {
 
     componentDidMount() {
         this.props.fetchContracts();
         this.props.fetchTokens();
 
-        const address = this.props.match.params.address
+        const address = this.props.match.params.address;
         if(isAddressValid(address)) {
             this.props.setAddress(address)
         } else {
@@ -30,7 +32,9 @@ class TradesPage extends Component {
             <div>
                 <h3>Trades Made</h3>
                 <p>Address: {this.props.match.params.address}</p>
-                <p>{JSON.stringify(this.props.address)}</p>
+                <p>{JSON.stringify(this.props.switcheo.contracts)}</p>
+                <p>{JSON.stringify(this.props.address.orders)}</p>
+                <button onClick={this.props.fetchOrders}>Fetch Orders</button>
             </div>
         )
     }
@@ -44,7 +48,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     fetchContracts,
     fetchTokens,
     setAddress,
-    raiseError
+    raiseError,
+    fetchOrders
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(TradesPage);
