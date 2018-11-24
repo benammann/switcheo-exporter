@@ -7,6 +7,8 @@ import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
 import { store, history } from './store';
 
+import ErrorDialog from './components/ErrorDialog'
+
 import HomePage from './pages/home'
 import TradesPage from './pages/trades'
 
@@ -17,8 +19,10 @@ ReactDOM.render(<Provider store={store}>
     <ConnectedRouter history={history}>
         <MuiThemeProvider theme={theme}>
             <Switch>
-                <Route exact path={"/"} component={HomePage} />
-                <Route path={"/trades/:address"} component={TradesPage} />
+                <ErrorDialog>
+                    <Route exact path={"/"} component={HomePage} />
+                    <Route path={"/trades/:address"} component={TradesPage} />
+                </ErrorDialog>
             </Switch>
         </MuiThemeProvider>
     </ConnectedRouter>
