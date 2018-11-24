@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
+import { toggleNetwork } from './actions/switcheo/toggleNetwork'
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -20,9 +26,23 @@ class App extends Component {
             Learn React
           </a>
         </header>
+          <div>
+              <button onClick={this.props.toggleNetwork}>Toggle Network</button>
+              <pre>
+                  {JSON.stringify(this.props)}
+              </pre>
+          </div>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+    ...state
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    toggleNetwork,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
