@@ -10,7 +10,7 @@ This projects goal is to allow every switcheo user to export its trades to .csv 
 
 
 ### Main Features
-* Export Trades from https://switcheo.exchange/ using just a NEO, ETH or QTUM address to a .csv sheet
+* Export Trades from https://switcheo.exchange/ to a .csv sheet
 * Apply complex filters
 * Export from multiple contracts
 
