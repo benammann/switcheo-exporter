@@ -1,6 +1,8 @@
 import { ADDRESS_FETCH_ORDERS } from "./actions";
 import { LAYOUT_RAISE_ERROR } from "../layout/actions";
 
+import { history } from "../../store";
+
 import { convertOrders } from "../../helpers/convertOrders";
 
 export const fetchOrders = () => (dispatch, getState) => {
@@ -31,7 +33,8 @@ export const fetchOrders = () => (dispatch, getState) => {
                         dispatch({
                             type: LAYOUT_RAISE_ERROR,
                             message: `Could not fetch orders: ${err.message}`
-                        })
+                        });
+                        history.push("/")
                     })
 
             } else {
@@ -39,7 +42,8 @@ export const fetchOrders = () => (dispatch, getState) => {
                 dispatch({
                     type: LAYOUT_RAISE_ERROR,
                     message: `Could not fetch orders: No contracts available for ${addressType}`
-                })
+                });
+                history.push("/")
 
             }
 
@@ -48,6 +52,7 @@ export const fetchOrders = () => (dispatch, getState) => {
                 type: LAYOUT_RAISE_ERROR,
                 message: 'Could not fetch orders: No address is given'
             })
+            history.push("/")
         }
 };
 
@@ -60,7 +65,7 @@ export const fetchOrders = () => (dispatch, getState) => {
  */
 const fetchOrdersFromContract = async (addressHashed, contractHash, network) => {
 
-    const requestUrl = `https://${network}.switcheo.network/v2/orders?address=${addressHashed}&contract_hash=${contractHash}`
+    const requestUrl = `https://${network}.switcheo.network/v2/orders?address=${addressHashed}&contract_hash=${contractHash}`;
     return await fetch(requestUrl).then(res => res.json())
 
 };

@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { fetchContracts } from "../../actions/switcheo/fetchContracts";
 import { fetchTokens } from "../../actions/switcheo/fetchTokens";
 import { setAddress } from "../../actions/address/setAddress";
-import { isAddressValid } from "../../helpers/isAddressValid";
 import { raiseError } from "../../actions/layout/raiseError";
 
 import { fetchOrders } from "../../actions/address/fetchOrders";
@@ -17,13 +16,7 @@ class TradesPage extends Component {
 
     componentDidMount() {
         const address = this.props.match.params.address;
-        if(isAddressValid(address)) {
-            this.props.setAddress(address, true);
-        } else {
-            this.props.raiseError(`Please enter a valid NEO, ETH or QTUM address`);
-            this.props.history.push("/")
-        }
-
+        this.props.setAddress(address, true);
     }
 
     render() {
