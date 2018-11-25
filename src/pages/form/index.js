@@ -16,6 +16,8 @@ import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import CodeIcon from '@material-ui/icons/Code';
 import WebIcon from '@material-ui/icons/Web';
+import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
 
 
 import { isAddressValid } from "../../helpers/isAddressValid";
@@ -62,6 +64,9 @@ const styles = theme => ({
     },
     links: {
         paddingTop: 10
+    },
+    ghPages: {
+        paddingTop: 20
     }
 });
 
@@ -132,14 +137,24 @@ class HomePage extends Component {
                     </div>
                 </Paper>
                 <div align="center" className={this.props.classes.links}>
-                    <Button onClick={() => {window.open("https://switcheo.exchange/", "_blank")}}>
-                        <WebIcon />
-                        Switcheo Exchange
-                    </Button>
-                    <Button onClick={() => {window.open("https://github.com/benammann/switcheo-exporter", "_blank")}}>
-                        <CodeIcon />
-                        Github
-                    </Button>
+                    <Tooltip title="Go to switcheo.exchange">
+                        <IconButton onClick={() => {window.open("https://switcheo.exchange/", "_blank")}}>
+                            <WebIcon />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Open github project">
+                        <IconButton onClick={() => {window.open("https://github.com/benammann/switcheo-exporter", "_blank")}}>
+                            <CodeIcon />
+                        </IconButton>
+                    </Tooltip>
+                </div>
+                <div align="center" className={this.props.classes.ghPages}>
+                    <a href={"https://pages.github.com/"} target={"_blank"}>
+                    <Typography component={"p"}>Hosted on</Typography>
+                    <img src={"./gh_pages.svg"} alt="github pages" style={{
+                        width: '30%',
+                        height: 'auto'
+                    }} /></a>
                 </div>
             </main>
         );
