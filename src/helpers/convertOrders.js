@@ -30,6 +30,10 @@ export const convertOrders = (orders, tokens, contracts) => {
         //fam = "Fill and Make"
         for (const fam of fams) {
 
+            if(!order.blockchain) {
+                continue
+            }
+
             const blockchain = order.blockchain.toUpperCase();
 
             if (blockchain === symbols.NEO || blockchain === symbols.ETH || blockchain === symbols.QTUM) {
@@ -65,6 +69,11 @@ export const convertOrders = (orders, tokens, contracts) => {
                  * Format given amount back to original amount
                  */
 
+                const towardToken = tokens[pair.split("_")[0]];
+                if(towardToken === undefined){
+                    continue;
+                }
+
                 const decimals = tokens[pair.split("_")[0].toUpperCase()].decimals;
                 const amount = parseFloat(side === "BUY" ? fill_amount : want_amount) / Math.pow(10, decimals);
 
@@ -76,8 +85,14 @@ export const convertOrders = (orders, tokens, contracts) => {
                  */
                 if (!fam.is_make) {
                     fee_symbol = Object.keys(tokens).find(symbol => tokens[symbol].hash === fee_asset_id);
-                    const fee_token_precision = tokens[fee_symbol].decimals;
-                    feePaid = parseFloat(fee_amount) / Math.pow(10, fee_token_precision);
+                    if(fee_symbol) {
+                        const fee_token_precision = tokens[fee_symbol].decimals;
+                        feePaid = parseFloat(fee_amount) / Math.pow(10, fee_token_precision);
+                    } else {
+                        fee_symbol = fee_asset_id;
+                        feePaid = fee_amount
+                    }
+
                 }
 
                 // Calculate total amount

@@ -36,6 +36,7 @@ export const fetchOrders = (resetLoading = false) => (dispatch, getState) => {
 
                     })
                     .catch((err) => {
+                        console.log(err)
                         dispatch({
                             type: LAYOUT_RAISE_ERROR,
                             message: `Could not fetch orders: ${err.message}`
