@@ -14,6 +14,9 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
+import CodeIcon from '@material-ui/icons/Code';
+import WebIcon from '@material-ui/icons/Web';
+
 
 import { isAddressValid } from "../../helpers/isAddressValid";
 import { resetAddress } from "../../actions/address/resetAddress";
@@ -57,6 +60,9 @@ const styles = theme => ({
     submit: {
         marginTop: theme.spacing.unit * 3,
     },
+    links: {
+        paddingTop: 10
+    }
 });
 
 class HomePage extends Component {
@@ -125,6 +131,16 @@ class HomePage extends Component {
                         </Button>
                     </div>
                 </Paper>
+                <div align="center" className={this.props.classes.links}>
+                    <Button onClick={() => {window.open("https://switcheo.exchange/", "_blank")}}>
+                        <WebIcon />
+                        Switcheo Exchange
+                    </Button>
+                    <Button onClick={() => {window.open("https://github.com/benammann/switcheo-exporter", "_blank")}}>
+                        <CodeIcon />
+                        Github
+                    </Button>
+                </div>
             </main>
         );
     }
