@@ -3,9 +3,11 @@ import { LAYOUT_RAISE_ERROR } from "../layout/actions";
 
 import { history } from "../../store";
 
+import { unsetLoading } from "../layout/unsetLoading";
+
 import { convertOrders } from "../../helpers/convertOrders";
 
-export const fetchOrders = () => (dispatch, getState) => {
+export const fetchOrders = (resetLoading = false) => (dispatch, getState) => {
 
         const {addressHashed, addressType} = getState().address;
 
@@ -28,12 +30,19 @@ export const fetchOrders = () => (dispatch, getState) => {
                             orders
                         });
 
+                        if(resetLoading) {
+                            dispatch(unsetLoading())
+                        }
+
                     })
                     .catch((err) => {
                         dispatch({
                             type: LAYOUT_RAISE_ERROR,
                             message: `Could not fetch orders: ${err.message}`
                         });
+                        if(resetLoading) {
+                            dispatch(unsetLoading())
+                        }
                         history.push("/")
                     })
 
@@ -43,6 +52,9 @@ export const fetchOrders = () => (dispatch, getState) => {
                     type: LAYOUT_RAISE_ERROR,
                     message: `Could not fetch orders: No contracts available for ${addressType}`
                 });
+                if(resetLoading) {
+                    dispatch(unsetLoading())
+                }
                 history.push("/")
 
             }
@@ -52,6 +64,9 @@ export const fetchOrders = () => (dispatch, getState) => {
                 type: LAYOUT_RAISE_ERROR,
                 message: 'Could not fetch orders: No address is given'
             })
+            if(resetLoading) {
+                dispatch(unsetLoading())
+            }
             history.push("/")
         }
 };

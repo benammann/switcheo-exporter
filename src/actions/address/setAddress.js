@@ -1,4 +1,6 @@
 import { ADDRESS_SET } from "./actions";
+import {LAYOUT_RAISE_ERROR} from "../layout/actions";
+
 import { getAddressType } from "../../helpers/getAddressType";
 import { formatAddress } from "../../helpers/formatAddress";
 import {isAddressValid} from "../../helpers/isAddressValid";
@@ -9,7 +11,8 @@ import { fetchOrders } from "./fetchOrders";
 
 import { fetchContracts } from "../switcheo/fetchContracts";
 import { fetchTokens } from "../switcheo/fetchTokens";
-import {LAYOUT_RAISE_ERROR} from "../layout/actions";
+
+import { setLoading } from "../layout/setLoading";
 
 
 /**
@@ -29,10 +32,10 @@ export const setAddress = (address, doFetchOrders = false) => dispatch => {
         });
 
         if(doFetchOrders) {
-
+            dispatch(setLoading());
             dispatch(fetchContracts(() => {
                 dispatch(fetchTokens(() => {
-                    dispatch(fetchOrders());
+                    dispatch(fetchOrders(true));
                 }));
             }));
         }

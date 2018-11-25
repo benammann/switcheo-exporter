@@ -10,6 +10,8 @@ import { raiseError } from "../../actions/layout/raiseError";
 
 import { fetchOrders } from "../../actions/address/fetchOrders";
 
+import Spinner from '../../components/Spinner'
+
 import Drawer from '../../components/Drawer'
 import OrdersTable from '../../components/OrdersTable'
 
@@ -21,10 +23,14 @@ class TradesPage extends Component {
         document.title = `List of trades - ${address}`
     }
 
+    renderOrdersTable = () => {
+        return !this.props.layout.loading ? <OrdersTable /> : <Spinner/>
+    };
+
     render() {
         return (
             <Drawer>
-                <OrdersTable />
+                {this.renderOrdersTable()}
             </Drawer>
         )
     }
