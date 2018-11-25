@@ -69,12 +69,10 @@ export const convertOrders = (orders, tokens, contracts) => {
                  * Format given amount back to original amount
                  */
 
-                const towardToken = tokens[pair.split("_")[0]];
-                if(towardToken === undefined){
-                    continue;
-                }
-
-                const decimals = tokens[pair.split("_")[0].toUpperCase()].decimals;
+                const towardTokenSymbol = pair.split("_")[0];
+                const towardToken = tokens[towardTokenSymbol];
+                // use 8 as default precision in case the token is not listed anymore
+                const decimals = towardToken === undefined ? 8 : tokens[pair.split("_")[0].toUpperCase()].decimals;
                 const amount = parseFloat(side === "BUY" ? fill_amount : want_amount) / Math.pow(10, decimals);
 
                 let fee_symbol = '-';
@@ -89,8 +87,12 @@ export const convertOrders = (orders, tokens, contracts) => {
                         const fee_token_precision = tokens[fee_symbol].decimals;
                         feePaid = parseFloat(fee_amount) / Math.pow(10, fee_token_precision);
                     } else {
-                        fee_symbol = fee_asset_id;
-                        feePaid = fee_amount
+                        /**
+                         * Use toward token as fee symbol
+                         * and 8 as default precision
+                         */
+                        fee_symbol = towardTokenSymbol;
+                        feePaid = parseFloat(fee_amount) / Math.pow(10, 8);
                     }
 
                 }
