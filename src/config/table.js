@@ -1,6 +1,6 @@
 export const columns = [
     {
-        name: "Date(UTC)",
+        name: "Date",
         options: {
             filter: false
         }
@@ -56,5 +56,10 @@ export const columns = [
 
 export const options = {
     selectableRows: false,
-    print: false
+    print: false,
+    textLabels: {
+        body: {
+            noMatch: "Sorry, no trades have been made with this address yet",
+        }
+    }
 };
