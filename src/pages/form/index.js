@@ -149,8 +149,8 @@ class HomePage extends Component {
                     </Tooltip>
                 </div>
                 <div align="center" className={this.props.classes.ghPages}>
-                    <a href={"https://pages.github.com/"} target={"_blank"}>
                     <Typography component={"p"}>Hosted on</Typography>
+                    <a href={"https://pages.github.com/"} target={"_blank"}>
                     <img src={"./gh_pages.svg"} alt="github pages" style={{
                         width: '30%',
                         height: 'auto'
