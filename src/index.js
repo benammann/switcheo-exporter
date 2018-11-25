@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
 import {Provider} from 'react-redux';
-import {Route, Switch, Redirect} from 'react-router';
+import {Route, Switch} from 'react-router';
 import {ConnectedRouter} from 'connected-react-router';
 import {history, store} from './store';
 
@@ -22,7 +22,6 @@ ReactDOM.render(<Provider store={store}>
                 <ErrorDialog>
                     <Route exact path={"/"} component={HomePage}/>
                     <Route path={"/address/:address"} component={TradesPage}/>
-                    <Redirect to={"/"} />
                 </ErrorDialog>
             </Switch>
         </MuiThemeProvider>

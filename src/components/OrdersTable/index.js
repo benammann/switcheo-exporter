@@ -16,7 +16,14 @@ class OrdersTable extends Component {
                     title={`${this.props.address.addressType}: ${this.props.address.address}`}
                     data={this.props.address.orders || []}
                     columns={columns}
-                    options={options}
+                    options={
+                        {
+                            ...options,
+                            downloadOptions: {
+                                filename: `switcheonetwork_${this.props.address.addressType}_${this.props.address.address}`
+                            }
+                        }
+                    }
                 />
             </MuiThemeProvider>
         )
