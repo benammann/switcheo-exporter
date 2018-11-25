@@ -1,7 +1,7 @@
 
 
 <div style="width: 100%" align="center">
- <h4>Switcheo Exporter</h4> <p> <a href="https://benammann.github.io/switcheo-exporter" target="_blank">benammann.github.io/switcheo-exporter</a></p> <br /></div>
+ <h2>Switcheo Exporter</h2> <p> <a href="https://benammann.github.io/switcheo-exporter" target="_blank">benammann.github.io/switcheo-exporter</a></p> <br /></div>
 
 This projects goal is to allow every switcheo user to export its trades to .csv in a dead simple way. It is built with crosschain in mind, so the whole project structure is built to fully support NEO, QTUM and ETH.
 
