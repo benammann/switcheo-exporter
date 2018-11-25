@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 
-import { connectRouter } from 'connected-react-router';
+import {connectRouter} from 'connected-react-router';
 
 import switcheo from './switcheo/switcheoReducer'
 import layout from './layout/layoutReducer'

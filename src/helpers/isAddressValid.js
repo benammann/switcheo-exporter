@@ -1,4 +1,4 @@
-import { getAddressType } from "./getAddressType";
+import {getAddressType} from "./getAddressType";
 
 /**
  * Checks if the given Address is valid

@@ -19,7 +19,7 @@
  */
 
 import * as symbols from './symbols'
-import { wallet } from '@cityofzion/neon-js'
+import {wallet} from '@cityofzion/neon-js'
 
 /**
  * Converts orders to a readable format
@@ -31,23 +31,23 @@ import { wallet } from '@cityofzion/neon-js'
 export const convertOrders = (orders, tokens, contracts) => {
     let convertedOrders = [];
 
-    for(const order of orders) {
+    for (const order of orders) {
         //fam = "Fills and Makes"
         let fills = order.fills;
         let makes = order.makes;
 
-        for(const index of fills.keys()){
+        for (const index of fills.keys()) {
             fills[index].is_make = false;
         }
 
-        for(const index of makes.keys()){
+        for (const index of makes.keys()) {
             makes[index].is_make = true;
         }
 
         const fams = [].concat.apply([], [fills, makes]);
 
         //fam = "Fill and Make"
-        for(const fam of fams) {
+        for (const fam of fams) {
 
             const blockchain = order.blockchain.toUpperCase();
 
@@ -91,7 +91,7 @@ export const convertOrders = (orders, tokens, contracts) => {
                 /**
                  * Makes are free
                  */
-                if(!fam.is_make) {
+                if (!fam.is_make) {
                     fee_symbol = Object.keys(tokens).find(symbol => tokens[symbol].hash === fee_asset_id);
                     const fee_token_precision = tokens[fee_symbol].decimals;
                     feePaid = parseFloat(fee_amount) / Math.pow(10, fee_token_precision);
@@ -114,7 +114,7 @@ export const convertOrders = (orders, tokens, contracts) => {
                 })
 
             } else {
-               //invalid blockchain type
+                //invalid blockchain type
             }
 
         }

@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
-import { Provider } from 'react-redux';
-import { Route, Switch } from 'react-router';
-import { ConnectedRouter } from 'connected-react-router';
-import { store, history } from './store';
+import {Provider} from 'react-redux';
+import {Route, Switch} from 'react-router';
+import {ConnectedRouter} from 'connected-react-router';
+import {history, store} from './store';
 
 import ErrorDialog from './components/ErrorDialog'
 
@@ -20,8 +20,8 @@ ReactDOM.render(<Provider store={store}>
         <MuiThemeProvider theme={theme}>
             <Switch>
                 <ErrorDialog>
-                    <Route exact path={"/"} component={HomePage} />
-                    <Route path={"/trades/:address"} component={TradesPage} />
+                    <Route exact path={"/"} component={HomePage}/>
+                    <Route path={"/trades/:address"} component={TradesPage}/>
                 </ErrorDialog>
             </Switch>
         </MuiThemeProvider>

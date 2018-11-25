@@ -7,8 +7,14 @@ import * as symbols from './symbols'
  * @param address {string}
  */
 export const getAddressType = (address = '') => {
-    if(validator.validate(address, symbols.NEO)) { return symbols.NEO }
-    if(validator.validate(address, symbols.ETH)) { return symbols.ETH }
-    if(validator.validate(address, symbols.QTUM)) { return symbols.QTUM }
+    if (validator.validate(address, symbols.NEO)) {
+        return symbols.NEO
+    }
+    if (validator.validate(address, symbols.ETH)) {
+        return symbols.ETH
+    }
+    if (validator.validate(address, symbols.QTUM)) {
+        return symbols.QTUM
+    }
     return ''
 };
