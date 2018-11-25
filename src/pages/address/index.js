@@ -11,6 +11,7 @@ import { raiseError } from "../../actions/layout/raiseError";
 import { fetchOrders } from "../../actions/address/fetchOrders";
 
 import Drawer from '../../components/Drawer'
+import OrdersTable from '../../components/OrdersTable'
 
 class TradesPage extends Component {
 
@@ -22,7 +23,7 @@ class TradesPage extends Component {
     render() {
         return (
             <Drawer>
-                <p>{JSON.stringify(this.props.switcheo)}</p>
+                <OrdersTable />
             </Drawer>
         )
     }

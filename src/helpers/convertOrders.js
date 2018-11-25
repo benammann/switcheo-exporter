@@ -76,7 +76,7 @@ export const convertOrders = (orders, tokens, contracts) => {
                 const orderType = side.toUpperCase();
 
                 //Parse order price
-                const orderPrice = parseFloat(price);
+                const orderPrice = parseFloat(price).toFixed(8);
 
                 /**
                  * Format given amount back to original amount
@@ -100,18 +100,18 @@ export const convertOrders = (orders, tokens, contracts) => {
                 // Calculate total amount
                 const total = Number(parseFloat(orderPrice * amount)).toFixed(8);
 
-                convertedOrders.push({
-                    date: orderDate,
+                convertedOrders.push([
+                    orderDate,
                     address,
-                    contract_version: contractVersion,
+                    contractVersion,
                     market,
-                    type: orderType,
-                    price: orderPrice,
-                    fee_token: fee_symbol,
-                    fee_paid: feePaid,
+                    orderType,
+                    orderPrice,
+                    fee_symbol,
+                    feePaid,
                     total,
-                    status,
-                })
+                    status
+                ]);
 
             } else {
                 //invalid blockchain type

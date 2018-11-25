@@ -93,7 +93,7 @@ class HomePage extends Component {
      */
     loadTrades = () => {
         if(this.state.isValid) {
-            this.props.history.push(`/trades/${this.state.address}`)
+            this.props.history.push(`/address/${this.state.address}`)
         }
     };
 
@@ -102,7 +102,7 @@ class HomePage extends Component {
             <main className={this.props.classes.main}>
                 <CssBaseline />
                 <Paper className={this.props.classes.paper}>
-                    <img src={"https://switcheo.network/images/switcheonetwork_logo.svg"} alt={"Switcheo Network Logo"}/>
+                   <img src={"/switcheonetwork_logo.svg"} alt={"Switcheo Network Logo"}/>
                     <Typography component="h1" variant="h6">
                         Trades Exporter
                     </Typography>

@@ -9,19 +9,19 @@ import {history, store} from './store';
 
 import ErrorDialog from './components/ErrorDialog'
 
-import HomePage from './pages/home'
-import TradesPage from './pages/trades'
+import HomePage from './pages/form'
+import TradesPage from './pages/address'
 
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import {theme} from './theme'
+import {darkTheme} from './config/theme'
 
 ReactDOM.render(<Provider store={store}>
     <ConnectedRouter history={history}>
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={darkTheme}>
             <Switch>
                 <ErrorDialog>
                     <Route exact path={"/"} component={HomePage}/>
-                    <Route path={"/trades/:address"} component={TradesPage}/>
+                    <Route path={"/address/:address"} component={TradesPage}/>
                 </ErrorDialog>
             </Switch>
         </MuiThemeProvider>
