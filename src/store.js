@@ -12,5 +12,6 @@ export const store = createStore(
             routerMiddleware(history),
             thunk
         ),
+        window.devToolsExtension ? window.devToolsExtension() : f => f
     ),
 );
