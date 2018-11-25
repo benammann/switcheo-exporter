@@ -2,7 +2,7 @@
   "name": "switcheo-exporter",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://benammann.github.io/switcheo-exporter2",
+  "homepage": "https://benammann.github.io/switcheo-exporter",
   "dependencies": {
     "@cityofzion/neon-js": "^4.2.0",
     "@material-ui/core": "^3.5.1",

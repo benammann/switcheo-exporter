@@ -18,6 +18,7 @@ class TradesPage extends Component {
     componentDidMount() {
         const address = this.props.match.params.address;
         this.props.setAddress(address, true);
+        document.title = `List of trades - ${address}`
     }
 
     render() {

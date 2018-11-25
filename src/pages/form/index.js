@@ -70,7 +70,8 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
-        this.props.resetAddress()
+        this.props.resetAddress();
+        document.title = "Switcheo Exporter";
     }
 
     /**
@@ -102,7 +103,7 @@ class HomePage extends Component {
             <main className={this.props.classes.main}>
                 <CssBaseline />
                 <Paper className={this.props.classes.paper}>
-                   <img src={"/switcheonetwork_logo.svg"} alt={"Switcheo Network Logo"}/>
+                   <img src={"./switcheonetwork_logo.svg"} alt={"Switcheo Network Logo"}/>
                     <Typography component="h1" variant="h6">
                         Trades Exporter
                     </Typography>
