@@ -1,25 +1,6 @@
-/**
- *
- * Rule: Each fill or make creates an entry in the csv
- *
- *
- * Date -> fillormake.created_at
- * Address -> neon.fromScriptHash(order.address)
- * Blockchain -> upper(order.blockchain)
- * Contract Version contracts[contract] -> key to upper
- * Market -> order.pair.replace('_', '/')
- * Type -> order.side
- *
- * Price -> fillormake.price
- * Amount  -> fillormake.fill_amount
- * Total -> price * amount
- * Fee Paid -> fillormake.fee_amount
- * Fee Token -> fillormake.tokens[fillormake.fee_asset_id]
- *
- */
-
 import * as symbols from './symbols'
 import {wallet} from '@cityofzion/neon-js'
+import moment from 'moment'
 
 /**
  * Converts orders to a readable format
@@ -59,7 +40,9 @@ export const convertOrders = (orders, tokens, contracts) => {
                 const {created_at, price, fill_amount, want_amount, fee_amount, fee_asset_id, status} = fam;
 
                 //Parse the orderDate
-                const orderDate = Date.parse(created_at);
+                const parsedDate = new Date(Date.parse(created_at));
+
+                const orderDate = moment(parsedDate).format("YYYY-MM-DD HH:mm:ss");
 
                 //Format the contract hash to a readable address
                 //TODO: Implement check for QTUM when switcheo implements it

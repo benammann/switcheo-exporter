@@ -1,6 +1,6 @@
 export const columns = [
     {
-        name: "Date",
+        name: "Order Date",
         options: {
             filter: false
         }
