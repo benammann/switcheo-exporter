@@ -86,6 +86,7 @@ export const convertOrders = (orders, tokens, contracts) => {
                 convertedOrders.push([
                     orderDate,
                     address,
+                    blockchain,
                     contractVersion,
                     market,
                     orderType,

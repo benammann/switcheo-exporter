@@ -13,6 +13,13 @@ export const columns = [
         }
     },
     {
+        name: "Blockchain",
+        options: {
+            display: 'false',
+            filter: false
+        }
+    },
+    {
         name: "Contract Version",
         options: {
             display: 'false',
