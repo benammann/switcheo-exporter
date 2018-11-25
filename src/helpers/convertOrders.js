@@ -110,6 +110,7 @@ export const convertOrders = (orders, tokens, contracts) => {
                     fee_token: fee_symbol,
                     fee_paid: feePaid,
                     total,
+                    status,
                 })
 
             } else {

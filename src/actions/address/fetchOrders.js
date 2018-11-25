@@ -4,50 +4,51 @@ import { LAYOUT_RAISE_ERROR } from "../layout/actions";
 import { convertOrders } from "../../helpers/convertOrders";
 
 export const fetchOrders = () => (dispatch, getState) => {
-    const {addressHashed, addressType} = getState().address;
 
-    if(addressHashed && addressType) {
+        const {addressHashed, addressType} = getState().address;
 
-        const contracts = getState().switcheo.contracts[addressType];
-        const network = getState().switcheo.network;
+        if(addressHashed && addressType) {
 
-        if(contracts) {
+            const contracts = getState().switcheo.contracts[addressType];
+            const network = getState().switcheo.network;
 
-            fetchOrdersFromContracts(addressHashed, Object.values(contracts), network)
-                .then((orders) => {
+            if(contracts) {
 
-                    //merge orders from multiple contracts
-                    orders = [].concat.apply([], orders);
-                    orders = convertOrders(orders, getState().switcheo.tokens, getState().switcheo.contracts);
+                fetchOrdersFromContracts(addressHashed, Object.values(contracts), network)
+                    .then((orders) => {
 
-                    return dispatch({
-                        type: ADDRESS_FETCH_ORDERS,
-                        orders
-                    });
+                        //merge orders from multiple contracts
+                        orders = [].concat.apply([], orders);
+                        orders = convertOrders(orders, getState().switcheo.tokens, getState().switcheo.contracts);
 
-                })
-                .catch((err) => {
-                    return dispatch({
-                        type: LAYOUT_RAISE_ERROR,
-                        message: `Could not fetch orders: ${err.message}`
+                        dispatch({
+                            type: ADDRESS_FETCH_ORDERS,
+                            orders
+                        });
+
                     })
+                    .catch((err) => {
+                        dispatch({
+                            type: LAYOUT_RAISE_ERROR,
+                            message: `Could not fetch orders: ${err.message}`
+                        })
+                    })
+
+            } else {
+
+                dispatch({
+                    type: LAYOUT_RAISE_ERROR,
+                    message: `Could not fetch orders: No contracts available for ${addressType}`
                 })
+
+            }
 
         } else {
-
-            return dispatch({
+            dispatch({
                 type: LAYOUT_RAISE_ERROR,
-                message: `Could not fetch orders: No contracts available for ${addressType}`
+                message: 'Could not fetch orders: No address is given'
             })
-
         }
-
-    } else {
-        return dispatch({
-            type: LAYOUT_RAISE_ERROR,
-            message: 'Could not fetch orders: No address is given'
-        })
-    }
 };
 
 /**

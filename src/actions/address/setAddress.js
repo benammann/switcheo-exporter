@@ -4,6 +4,9 @@ import { formatAddress } from "../../helpers/formatAddress";
 
 import { fetchOrders } from "./fetchOrders";
 
+import { fetchContracts } from "../switcheo/fetchContracts";
+import { fetchTokens } from "../switcheo/fetchTokens";
+
 /**
  * Sets the address state
  * @param address
@@ -19,6 +22,11 @@ export const setAddress = (address, doFetchOrders = false) => dispatch => {
     });
 
     if(doFetchOrders) {
-        dispatch(fetchOrders());
+
+        dispatch(fetchContracts(() => {
+            dispatch(fetchTokens(() => {
+                dispatch(fetchOrders());
+            }));
+        }));
     }
 };

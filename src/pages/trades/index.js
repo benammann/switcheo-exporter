@@ -11,15 +11,14 @@ import { raiseError } from "../../actions/layout/raiseError";
 
 import { fetchOrders } from "../../actions/address/fetchOrders";
 
+import Drawer from '../../components/Drawer'
+
 class TradesPage extends Component {
 
     componentDidMount() {
-        this.props.fetchContracts();
-        this.props.fetchTokens();
-
         const address = this.props.match.params.address;
         if(isAddressValid(address)) {
-            this.props.setAddress(address)
+            this.props.setAddress(address, true);
         } else {
             this.props.raiseError(`Please enter a valid NEO, ETH or QTUM address`);
             this.props.history.push("/")
@@ -29,13 +28,9 @@ class TradesPage extends Component {
 
     render() {
         return (
-            <div>
-                <h3>Trades Made</h3>
-                <p>Address: {this.props.match.params.address}</p>
-                <p>{JSON.stringify(this.props.switcheo.contracts)}</p>
-                <p>{JSON.stringify(this.props.address.orders)}</p>
-                <button onClick={this.props.fetchOrders}>Fetch Orders</button>
-            </div>
+            <Drawer>
+                <p>{JSON.stringify(this.props.switcheo)}</p>
+            </Drawer>
         )
     }
 }
