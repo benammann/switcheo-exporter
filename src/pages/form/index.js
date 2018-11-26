@@ -95,7 +95,8 @@ class HomePage extends Component {
     /**
      * Navigates to /trades/:address in case the given address is valid
      */
-    loadTrades = () => {
+    loadTrades = (event) => {
+        event.preventDefault();
         if(this.state.isValid) {
             this.props.history.push(`/address/${this.state.address}`)
         }
@@ -111,21 +112,22 @@ class HomePage extends Component {
                         Trades Exporter
                     </Typography>
                     <div className={this.props.classes.form}>
-                        <FormControl margin="normal" required fullWidth>
-                            <InputLabel htmlFor="public_address">Public Address</InputLabel>
-                            <Input id="public_address" name="public_address" autoFocus onChange={event => this.handleAddressChange(event.target.value)} value={this.state.address}/>
-                        </FormControl>
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            color="primary"
-                            className={this.props.classes.submit}
-                            disabled={!this.state.isValid}
-                            onClick={this.loadTrades}
-                        >
-                            Load Trades
-                        </Button>
+                        <form onSubmit={this.loadTrades}>
+                            <FormControl margin="normal" required fullWidth>
+                                <InputLabel htmlFor="public_address">Public Address</InputLabel>
+                                <Input id="public_address" name="public_address" autoFocus onChange={event => this.handleAddressChange(event.target.value)} value={this.state.address}/>
+                            </FormControl>
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                className={this.props.classes.submit}
+                                disabled={!this.state.isValid}
+                            >
+                                Load Trades
+                            </Button>
+                        </form>
                     </div>
                 </Paper>
                 <Footer />
