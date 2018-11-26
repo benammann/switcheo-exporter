@@ -6,11 +6,14 @@ export const darkTheme = createMuiTheme({
     palette: {
         type: 'dark',
         primary: green
-    }
+    },
+    typography: {
+        useNextVariants: true,
+    },
 });
 
 export const darkTable = createMuiTheme({
-    overrides: {
-
-    }
+    typography: {
+        useNextVariants: true,
+    },
 });
