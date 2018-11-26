@@ -2,7 +2,7 @@
 
 <div style="width: 100%" align="center">
     <h2>Switcheo Exporter</h2>
-    <img src="https://travis-ci.com/benammann/switcheo-exporter.svg?branch=master" />
+    <img src="https://travis-ci.org/benammann/switcheo-exporter.svg?branch=master" />
      <p>
      <a href="https://benammann.github.io/switcheo-exporter" target="_blank">benammann.github.io/switcheo-exporter</a>
      </p>
