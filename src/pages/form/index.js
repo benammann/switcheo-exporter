@@ -14,14 +14,12 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
-import CodeIcon from '@material-ui/icons/Code';
-import WebIcon from '@material-ui/icons/Web';
-import IconButton from '@material-ui/core/IconButton';
-import Tooltip from '@material-ui/core/Tooltip';
 
 
 import { isAddressValid } from "../../helpers/isAddressValid";
 import { resetAddress } from "../../actions/address/resetAddress";
+
+import Footer from '../../components/Footer'
 
 const styles = theme => ({
     main: {
@@ -61,12 +59,6 @@ const styles = theme => ({
     },
     submit: {
         marginTop: theme.spacing.unit * 3,
-    },
-    links: {
-        paddingTop: 10
-    },
-    ghPages: {
-        paddingTop: 20
     }
 });
 
@@ -136,26 +128,7 @@ class HomePage extends Component {
                         </Button>
                     </div>
                 </Paper>
-                <div align="center" className={this.props.classes.links}>
-                    <Tooltip title="Go to switcheo.exchange">
-                        <IconButton onClick={() => {window.open("https://switcheo.exchange/", "_blank")}}>
-                            <WebIcon />
-                        </IconButton>
-                    </Tooltip>
-                    <Tooltip title="Open github project">
-                        <IconButton onClick={() => {window.open("https://github.com/benammann/switcheo-exporter", "_blank")}}>
-                            <CodeIcon />
-                        </IconButton>
-                    </Tooltip>
-                </div>
-                <div align="center" className={this.props.classes.ghPages}>
-                    <Typography>Hosted on</Typography>
-                    <a href={"https://pages.github.com/"} target={"_blank"}>
-                    <img src={"./gh_pages.svg"} alt="github pages" style={{
-                        width: '30%',
-                        height: 'auto'
-                    }} /></a>
-                </div>
+                <Footer />
             </main>
         );
     }
