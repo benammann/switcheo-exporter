@@ -93,7 +93,7 @@ class HomePage extends Component {
     };
 
     /**
-     * Navigates to /trades/:address in case the given address is valid
+     * Navigates to #/address/:address in case the given address is valid
      */
     loadTrades = (event) => {
         event.preventDefault();
