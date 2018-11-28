@@ -92,7 +92,7 @@ export const convertOrders = (orders, tokens, contracts, tickers) => {
                     gains = gains * -1;
                 }
 
-                gains = `${gains} %`;
+                gains = `${gains}%`;
                 /**
                  * Makes are free
                  */
