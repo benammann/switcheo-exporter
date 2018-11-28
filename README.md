@@ -15,6 +15,7 @@
 
 ### Main Features
 * Export Trades from https://switcheo.exchange/ to a .csv sheet
+* Export from Main- and TestNet
 * Apply complex filters
 * Export from multiple contracts
 
