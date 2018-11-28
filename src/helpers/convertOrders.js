@@ -7,9 +7,10 @@ import moment from 'moment'
  * @param orders
  * @param tokens
  * @param contracts
+ * @param tickers
  * @returns {Array}
  */
-export const convertOrders = (orders, tokens, contracts) => {
+export const convertOrders = (orders, tokens, contracts, tickers) => {
     let convertedOrders = [];
 
     for (const order of orders) {
@@ -65,19 +66,33 @@ export const convertOrders = (orders, tokens, contracts) => {
                 //Parse order price
                 const orderPrice = parseFloat(price).toFixed(8);
 
+                // Split pair
+                const splittedPair = pair.split("_");
+
                 /**
                  * Format given amount back to original amount
                  */
 
-                const towardTokenSymbol = pair.split("_")[0];
+                const towardTokenSymbol = splittedPair[0];
                 const towardToken = tokens[towardTokenSymbol];
                 // use 8 as default precision in case the token is not listed anymore
-                const decimals = towardToken === undefined ? 8 : tokens[pair.split("_")[0].toUpperCase()].decimals;
+                const decimals = towardToken === undefined ? 8 : tokens[splittedPair[0].toUpperCase()].decimals;
                 const amount = parseFloat(side === "BUY" ? fill_amount : want_amount) / Math.pow(10, decimals);
 
                 let fee_symbol = '-';
                 let feePaid = 0.0;
 
+                //detect current price
+                const currentPrice = tickers && tickers[splittedPair[0]] && tickers[splittedPair[0]][splittedPair[1]] ? tickers[splittedPair[0]][splittedPair[1]] : '?';
+
+                //calculate gains
+                let gains = currentPrice !== '?' ?  (((parseFloat(currentPrice).toFixed(8) / orderPrice ) * 100 - 100 )).toFixed(2): '?';
+
+                if(orderType === 'SELL' && gains > 0) {
+                    gains = gains * -1;
+                }
+
+                gains = `${gains} %`;
                 /**
                  * Makes are free
                  */
@@ -108,6 +123,8 @@ export const convertOrders = (orders, tokens, contracts) => {
                     market,
                     orderType,
                     orderPrice,
+                    currentPrice,
+                    gains,
                     fee_symbol,
                     feePaid,
                     total,

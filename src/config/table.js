@@ -38,6 +38,19 @@ export const columns = [
         }
     },
     {
+        name: "Current Price",
+        options: {
+            filter: false,
+            display: 'false',
+        }
+    },
+    {
+        name: "Gains",
+        options: {
+            filter: false,
+        }
+    },
+    {
         name: "Fee Token",
         options: {
             display: 'false'
