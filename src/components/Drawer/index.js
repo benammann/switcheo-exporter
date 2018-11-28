@@ -10,7 +10,16 @@ import { withStyles } from '@material-ui/core/styles';
 import {bindActionCreators} from "redux";
 import connect from "react-redux/es/connect/connect";
 
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
+
+import Hidden from '@material-ui/core/Hidden';
+
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
+
+import { toggleNetwork } from "../../actions/switcheo/toggleNetwork";
+import { mainNet } from "../../reducers/switcheo/networkReducer";
 
 const styles = theme => ({
     '@global': {
@@ -21,7 +30,7 @@ const styles = theme => ({
     appBar: {
         position: 'relative',
     },
-    backButton: {
+    pageTitle: {
         flex: 1,
     },
     content: {
@@ -41,14 +50,21 @@ class Header extends Component {
                 <CssBaseline />
                 <AppBar position="static" color="default" className={this.props.classes.appBar}>
                     <Toolbar>
-                        <div className={this.props.classes.backButton}>
+                        <div>
                             <IconButton onClick={this.navigateHome}>
                                 <ArrowBackIcon/>
                             </IconButton>
                         </div>
-                        <Typography variant="h6" noWrap>
-                            Switcheo Exporter v2
-                        </Typography>
+                        <Hidden xsDown>
+                            <Typography variant="h6" noWrap>
+                                Switcheo Exporter v2
+                            </Typography>
+                        </Hidden>
+                        <div className={this.props.classes.pageTitle} />
+                        <FormGroup row>
+                            <FormControlLabel control={<Switch color={"primary"} onChange={this.props.toggleNetwork} checked={this.props.switcheo.network === mainNet ? true : false} />} label={this.props.switcheo.network === mainNet ? "MainNet" : "TestNet"}/>
+                        </FormGroup>
+
                     </Toolbar>
                 </AppBar>
                 <div className={this.props.classes.content}>
@@ -68,7 +84,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-
+    toggleNetwork
 }, dispatch);
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Header)));
