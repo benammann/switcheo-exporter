@@ -26,6 +26,6 @@ export const toggleNetwork = () => (dispatch, getState) => {
         /**
          * TODO: implement raiseNotification
          */
-        dispatch(raiseError(`you are now on ${getState().switcheo.network === mainNet ? "main-net" : "test-net"}`));
+        dispatch(raiseError(`switched to ${getState().switcheo.network === mainNet ? "MainNet" : "TestNet"}`));
     }
 };

@@ -62,7 +62,7 @@ class Header extends Component {
                         </Hidden>
                         <div className={this.props.classes.pageTitle} />
                         <FormGroup row>
-                            <FormControlLabel control={<Switch color={"primary"} onChange={this.props.toggleNetwork} checked={this.props.switcheo.network === mainNet ? true : false} />} label={this.props.switcheo.network === mainNet ? "MainNet" : "TestNet"}/>
+                            <FormControlLabel control={<Switch color={"primary"} onChange={this.props.toggleNetwork} disabled={this.props.layout.loading} checked={this.props.switcheo.network === mainNet ? true : false} />} label={this.props.switcheo.network === mainNet ? "MainNet" : "TestNet"}/>
                         </FormGroup>
 
                     </Toolbar>
