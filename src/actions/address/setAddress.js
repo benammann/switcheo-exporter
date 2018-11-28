@@ -12,6 +12,8 @@ import { fetchOrders } from "./fetchOrders";
 import { fetchContracts } from "../switcheo/fetchContracts";
 import { fetchTokens } from "../switcheo/fetchTokens";
 
+import { fetchTickers } from "../switcheo/fetchTickers";
+
 import { setLoading } from "../layout/setLoading";
 
 
@@ -35,7 +37,9 @@ export const setAddress = (address, doFetchOrders = false) => dispatch => {
             dispatch(setLoading());
             dispatch(fetchContracts(() => {
                 dispatch(fetchTokens(() => {
-                    dispatch(fetchOrders(true));
+                    dispatch(fetchTickers(() => {
+                        dispatch(fetchOrders(true));
+                    }));
                 }));
             }));
         }
