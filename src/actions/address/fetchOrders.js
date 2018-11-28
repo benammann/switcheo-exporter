@@ -23,7 +23,7 @@ export const fetchOrders = (resetLoading = false) => (dispatch, getState) => {
 
                         //merge orders from multiple contracts
                         orders = [].concat.apply([], orders);
-                        orders = convertOrders(orders, getState().switcheo.tokens, getState().switcheo.contracts);
+                        orders = convertOrders(orders, getState().switcheo.tokens, getState().switcheo.contracts, getState().switcheo.tickers);
 
                         dispatch({
                             type: ADDRESS_FETCH_ORDERS,
