@@ -18,7 +18,7 @@ import Hidden from '@material-ui/core/Hidden';
 
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
-import { toggleNetwork } from "../../actions/switcheo/toggleNetwork";
+import { toggleNetwork } from "../../actions/switcheo/network/toggleNetwork";
 import { mainNet } from "../../reducers/switcheo/networkReducer";
 
 const styles = theme => ({
@@ -57,7 +57,7 @@ class Header extends Component {
                         </div>
                         <Hidden xsDown>
                             <Typography variant="h6" noWrap>
-                                {this.props.address.address}
+                                {this.props.address.address.address}
                             </Typography>
                         </Hidden>
                         <div className={this.props.classes.pageTitle} />

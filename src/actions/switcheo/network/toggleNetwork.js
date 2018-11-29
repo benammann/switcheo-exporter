@@ -1,11 +1,11 @@
-import { SWITCHEO_TOGGLE_NETWORK } from "./actions";
+import { SWITCHEO_TOGGLE_NETWORK } from "../actions";
 
-import { fetchContracts } from './fetchContracts'
-import { fetchTokens } from './fetchTokens'
+import { fetchContracts } from '../contracts/fetchContracts'
+import { fetchTokens } from '../tokens/fetchTokens'
 
-import { setAddress } from "../address/setAddress";
-import { raiseError } from "../layout/raiseError";
-import { mainNet} from "../../reducers/switcheo/networkReducer";
+import { setAddress } from "../../address/address/setAddress";
+import { raiseError } from "../../layout/errors/raiseError";
+import { mainNet} from "../../../reducers/switcheo/networkReducer";
 
 /**
  * toggles the current network between test-api and prod-api
@@ -18,11 +18,11 @@ export const toggleNetwork = () => (dispatch, getState) => {
     dispatch({
         type: SWITCHEO_TOGGLE_NETWORK,
     });
-    if(getState().address.address) {
+    if(getState().address.address.address) {
         /**
          * In case an address is set, its orders need to reload and rerender
          */
-        dispatch(setAddress(getState().address.address, true));
+        dispatch(setAddress(getState().address.address.address, true));
         /**
          * TODO: implement raiseNotification
          */

@@ -1,20 +1,22 @@
-import { ADDRESS_SET } from "./actions";
-import {LAYOUT_RAISE_ERROR} from "../layout/actions";
+import { ADDRESS_SET } from "../actions";
+import {LAYOUT_RAISE_ERROR} from "../../layout/actions";
 
-import { getAddressType } from "../../helpers/getAddressType";
-import { formatAddress } from "../../helpers/formatAddress";
-import {isAddressValid} from "../../helpers/isAddressValid";
+import { getAddressType } from "../../../helpers/getAddressType";
+import { formatAddress } from "../../../helpers/formatAddress";
+import {isAddressValid} from "../../../helpers/isAddressValid";
 
-import { history } from "../../store";
+import { history } from "../../../store";
 
-import { fetchOrders } from "./fetchOrders";
+import { fetchOrders } from "../orders/fetchOrders";
 
-import { fetchContracts } from "../switcheo/fetchContracts";
-import { fetchTokens } from "../switcheo/fetchTokens";
+import { fetchContracts } from "../../switcheo/contracts/fetchContracts";
+import { fetchTokens } from "../../switcheo/tokens/fetchTokens";
 
-import { fetchTickers } from "../switcheo/fetchTickers";
+import { fetchTickers } from "../../switcheo/tickers/fetchTickers";
 
-import { setLoading } from "../layout/setLoading";
+import { setLoading } from "../../layout/loading/setLoading";
+
+import { addAddressToHistory } from "../history/addAddressToHistory";
 
 
 /**
@@ -38,6 +40,7 @@ export const setAddress = (address, doFetchOrders = false) => dispatch => {
             dispatch(fetchContracts(() => {
                 dispatch(fetchTokens(() => {
                     dispatch(fetchTickers(() => {
+                        dispatch(addAddressToHistory(address));
                         dispatch(fetchOrders(true));
                     }));
                 }));

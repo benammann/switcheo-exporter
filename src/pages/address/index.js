@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { fetchContracts } from "../../actions/switcheo/fetchContracts";
-import { fetchTokens } from "../../actions/switcheo/fetchTokens";
-import { setAddress } from "../../actions/address/setAddress";
-import { raiseError } from "../../actions/layout/raiseError";
+import { fetchContracts } from "../../actions/switcheo/contracts/fetchContracts";
+import { fetchTokens } from "../../actions/switcheo/tokens/fetchTokens";
+import { setAddress } from "../../actions/address/address/setAddress";
+import { raiseError } from "../../actions/layout/errors/raiseError";
 
-import { fetchOrders } from "../../actions/address/fetchOrders";
+import { fetchOrders } from "../../actions/address/orders/fetchOrders";
 
 import Spinner from '../../components/Spinner'
 

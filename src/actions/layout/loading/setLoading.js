@@ -1,4 +1,4 @@
-import { LAYOUT_SET_LOADING } from "./actions";
+import { LAYOUT_SET_LOADING } from "../actions";
 
 /**
  * Sets the global layout state as loading

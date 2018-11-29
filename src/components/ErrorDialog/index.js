@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { hideError } from "../../actions/layout/hideError";
+import { hideError } from "../../actions/layout/errors/hideError";
 
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';

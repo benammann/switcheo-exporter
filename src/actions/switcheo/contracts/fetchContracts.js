@@ -1,5 +1,5 @@
-import { SWITCHEO_FETCH_CONTRACTS } from './actions'
-import { LAYOUT_RAISE_ERROR } from "../layout/actions";
+import { SWITCHEO_FETCH_CONTRACTS } from '../actions'
+import { LAYOUT_RAISE_ERROR } from "../../layout/actions";
 
 /**
  * fetches all contracts from /v2/exchange/contracts
