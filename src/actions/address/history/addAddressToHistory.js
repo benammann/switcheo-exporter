@@ -1,6 +1,4 @@
 import {ADDRESS_ADD_TO_HISTORY} from "../actions";
-
-import cookie from 'react-cookies'
 import {removeAddressFromHistory} from "./removeAddressFromHistory";
 
 /**
@@ -10,8 +8,8 @@ import {removeAddressFromHistory} from "./removeAddressFromHistory";
  */
 export const addAddressToHistory = (address = '') => dispatch => {
     dispatch(removeAddressFromHistory(address));
-    let newHistory = [address, ...cookie.load("address/history") || []];
-    cookie.save("address/history", newHistory, { path: '/' });
+    let newHistory = [address, ...JSON.parse(localStorage.getItem("address/history") || "[]")];
+    localStorage.setItem("address/history", JSON.stringify(newHistory));
     dispatch({
         type: ADDRESS_ADD_TO_HISTORY,
         history: newHistory

@@ -1,5 +1,4 @@
 import {ADDRESS_REMOVE_FROM_HISTORY} from "../actions";
-import cookie from 'react-cookies'
 
 /**
  * Removes $address from address history
@@ -8,8 +7,8 @@ import cookie from 'react-cookies'
  */
 export const removeAddressFromHistory = (address) => dispatch => {
 
-    let newHistory = (cookie.load("address/history") || []).filter(addr => addr !== address);
-    cookie.save("address/history", newHistory);
+    let newHistory = JSON.parse(localStorage.getItem("address/history") || "[]").filter(addr => addr !== address);
+    localStorage.setItem("address/history", JSON.stringify(newHistory));
 
     dispatch({
         type: ADDRESS_REMOVE_FROM_HISTORY,

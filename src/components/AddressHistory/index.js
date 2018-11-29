@@ -7,6 +7,8 @@ import ListItemText from '@material-ui/core/ListItemText'
 import {bindActionCreators} from "redux";
 import connect from "react-redux/es/connect/connect";
 
+import Hidden from '@material-ui/core/Hidden'
+
 class AddressHistory extends Component {
 
     onAddressClick = (address) => {
@@ -20,10 +22,15 @@ class AddressHistory extends Component {
             return (
                 <Paper>
                     <List>
-                        {this.props.address.history.map((address) => {
+                        {this.props.address.history.map((address, index) => {
                             return (
-                                <ListItem button onClick={() => {this.onAddressClick(address)}}>
-                                    <ListItemText primary={address} />
+                                <ListItem button onClick={() => {this.onAddressClick(address)}} key={index}>
+                                    <Hidden only={["xs"]}>
+                                        <ListItemText primary={address} />
+                                    </Hidden>
+                                    <Hidden only={["sm", "md", "lg", "xl"]}>
+                                        <ListItemText primary={`${address.slice(0, 20)}...`} />
+                                    </Hidden>
                                 </ListItem>
                             )
                         })}
