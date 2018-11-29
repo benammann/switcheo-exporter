@@ -122,6 +122,7 @@ export const convertOrders = (orders, tokens, contracts, tickers) => {
                     contractVersion,
                     market,
                     orderType,
+                    amount,
                     orderPrice,
                     currentPrice,
                     gains,

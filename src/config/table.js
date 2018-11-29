@@ -32,6 +32,9 @@ export const columns = [
         name: "Type"
     },
     {
+        name: "Amount"
+    },
+    {
         name: "Order Price",
         options: {
             filter: false
