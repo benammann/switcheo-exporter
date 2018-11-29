@@ -1,5 +1,5 @@
-import { SWITCHEO_FETCH_TICKERS } from "./actions";
-import { LAYOUT_RAISE_ERROR } from "../layout/actions";
+import { SWITCHEO_FETCH_TICKERS } from "../actions";
+import { LAYOUT_RAISE_ERROR } from "../../layout/actions";
 
 /**
  * Fetches the last price ( tickers ) from /v2/tickers/last_price

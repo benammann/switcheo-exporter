@@ -1,5 +1,5 @@
-import { SWITCHEO_FETCH_TOKENS } from './actions'
-import { LAYOUT_RAISE_ERROR } from '../layout/actions'
+import { SWITCHEO_FETCH_TOKENS } from '../actions'
+import { LAYOUT_RAISE_ERROR } from '../../layout/actions'
 
 /**
  * fetches all tokens from /api/v2/exchange/tokens

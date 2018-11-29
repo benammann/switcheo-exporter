@@ -17,9 +17,9 @@ import withStyles from '@material-ui/core/styles/withStyles';
 
 
 import { isAddressValid } from "../../helpers/isAddressValid";
-import { resetAddress } from "../../actions/address/resetAddress";
+import { resetAddress } from "../../actions/address/address/resetAddress";
 
-import { fetchAddressHistory } from "../../actions/address/fetchAddressHistory";
+import { fetchAddressHistory } from "../../actions/address/history/fetchAddressHistory";
 
 import AddressHistory from '../../components/AddressHistory'
 import Footer from '../../components/Footer'

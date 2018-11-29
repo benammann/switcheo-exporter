@@ -1,4 +1,4 @@
-import {ADDRESS_FETCH_HISTORY} from "./actions";
+import {ADDRESS_FETCH_HISTORY} from "../actions";
 import cookie from 'react-cookies';
 
 /**

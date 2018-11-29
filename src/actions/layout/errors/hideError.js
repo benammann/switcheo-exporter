@@ -1,4 +1,4 @@
-import { LAYOUT_HIDE_ERROR } from "./actions";
+import { LAYOUT_HIDE_ERROR } from "../actions";
 
 /**
  * Hides the displayed error message

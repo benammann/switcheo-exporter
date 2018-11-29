@@ -1,11 +1,11 @@
-import { ADDRESS_FETCH_ORDERS } from "./actions";
-import { LAYOUT_RAISE_ERROR } from "../layout/actions";
+import { ADDRESS_FETCH_ORDERS } from "../actions";
+import { LAYOUT_RAISE_ERROR } from "../../layout/actions";
 
-import { history } from "../../store";
+import { history } from "../../../store";
 
-import { unsetLoading } from "../layout/unsetLoading";
+import { unsetLoading } from "../../layout/loading/unsetLoading";
 
-import { convertOrders } from "../../helpers/convertOrders";
+import { convertOrders } from "../../../helpers/convertOrders";
 
 export const fetchOrders = (resetLoading = false) => (dispatch, getState) => {
 

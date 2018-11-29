@@ -18,7 +18,7 @@ import Hidden from '@material-ui/core/Hidden';
 
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
-import { toggleNetwork } from "../../actions/switcheo/toggleNetwork";
+import { toggleNetwork } from "../../actions/switcheo/network/toggleNetwork";
 import { mainNet } from "../../reducers/switcheo/networkReducer";
 
 const styles = theme => ({

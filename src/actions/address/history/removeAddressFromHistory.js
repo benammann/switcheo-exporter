@@ -1,4 +1,4 @@
-import {ADDRESS_REMOVE_FROM_HISTORY} from "./actions";
+import {ADDRESS_REMOVE_FROM_HISTORY} from "../actions";
 import cookie from 'react-cookies'
 
 /**

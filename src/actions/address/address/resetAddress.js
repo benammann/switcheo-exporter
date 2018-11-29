@@ -1,4 +1,4 @@
-import { ADDRESS_RESET } from "./actions";
+import { ADDRESS_RESET } from "../actions";
 
 /**
  * Resets the Address state
