@@ -8,7 +8,7 @@ import cookie from 'react-cookies'
  */
 export const removeAddressFromHistory = (address) => dispatch => {
 
-    let newHistory = cookie.load("address/history").filter(addr => addr !== address);
+    let newHistory = (cookie.load("address/history") || []).filter(addr => addr !== address);
     cookie.save("address/history", newHistory);
 
     dispatch({
