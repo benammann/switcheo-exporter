@@ -6,8 +6,11 @@ import cookie from 'react-cookies';
  * @returns {Function}
  */
 export const fetchAddressHistory = () => dispatch => {
+    let addrHistory = cookie.load("address/history") || [];
+    addrHistory = addrHistory.slice(0, 4);
+
     dispatch({
         type: ADDRESS_FETCH_HISTORY,
-        history: cookie.load("address/history") || []
+        history: addrHistory
     });
 };
