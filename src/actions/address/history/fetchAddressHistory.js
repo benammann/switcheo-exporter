@@ -5,9 +5,15 @@ import {ADDRESS_FETCH_HISTORY} from "../actions";
  * @returns {Function}
  */
 export const fetchAddressHistory = () => dispatch => {
-    let addrHistory = JSON.parse(localStorage.getItem("address/history") || []);
-    addrHistory = addrHistory.slice(0, 4);
 
+    let addrHistory = localStorage.getItem("address/history");
+
+    if(addrHistory) {
+        addrHistory = JSON.parse(addrHistory);
+    } else {
+        localStorage.setItem("address/history", "[]");
+        addrHistory = [];
+    }
     dispatch({
         type: ADDRESS_FETCH_HISTORY,
         history: addrHistory

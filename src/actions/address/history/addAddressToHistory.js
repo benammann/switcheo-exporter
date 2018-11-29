@@ -8,7 +8,15 @@ import {removeAddressFromHistory} from "./removeAddressFromHistory";
  */
 export const addAddressToHistory = (address = '') => dispatch => {
     dispatch(removeAddressFromHistory(address));
-    let newHistory = [address, ...JSON.parse(localStorage.getItem("address/history") || "[]")];
+
+    let currentHistory = localStorage.getItem("address/history");
+    if(currentHistory) {
+        currentHistory = JSON.parse(currentHistory)
+    } else {
+        currentHistory = [];
+    }
+
+    let newHistory = [address, ...currentHistory];
     localStorage.setItem("address/history", JSON.stringify(newHistory));
     dispatch({
         type: ADDRESS_ADD_TO_HISTORY,

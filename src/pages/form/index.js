@@ -122,7 +122,7 @@ class HomePage extends Component {
                         <form onSubmit={this.loadTrades}>
                             <FormControl margin="normal" required fullWidth>
                                 <InputLabel htmlFor="public_address">Public Address</InputLabel>
-                                <Input id="public_address" name="public_address" autoFocus onChange={event => this.handleAddressChange(event.target.value)} value={this.state.address}/>
+                                <Input id="public_address" name="public_address" autoFocus onChange={event => this.handleAddressChange(event.target.value)} value={this.state.address} autoComplete={"off"}/>
                             </FormControl>
                             <Button
                                 type="submit"
