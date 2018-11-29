@@ -16,6 +16,8 @@ import { fetchTickers } from "../switcheo/fetchTickers";
 
 import { setLoading } from "../layout/setLoading";
 
+import { addAddressToHistory } from "./addAddressToHistory";
+
 
 /**
  * Sets the address state
@@ -38,6 +40,7 @@ export const setAddress = (address, doFetchOrders = false) => dispatch => {
             dispatch(fetchContracts(() => {
                 dispatch(fetchTokens(() => {
                     dispatch(fetchTickers(() => {
+                        dispatch(addAddressToHistory(address));
                         dispatch(fetchOrders(true));
                     }));
                 }));

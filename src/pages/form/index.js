@@ -19,6 +19,8 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import { isAddressValid } from "../../helpers/isAddressValid";
 import { resetAddress } from "../../actions/address/resetAddress";
 
+import { fetchAddressHistory } from "../../actions/address/fetchAddressHistory";
+
 import Footer from '../../components/Footer'
 
 const styles = theme => ({
@@ -73,6 +75,7 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
+        this.props.fetchAddressHistory();
         this.props.resetAddress();
         document.title = "Switcheo Exporter";
     }
@@ -130,6 +133,7 @@ class HomePage extends Component {
                         </form>
                     </div>
                 </Paper>
+                <p>{JSON.stringify(this.props.address.history)}</p>
                 <Footer />
             </main>
         );
@@ -145,7 +149,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    resetAddress
+    resetAddress,
+    fetchAddressHistory
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(HomePage));
