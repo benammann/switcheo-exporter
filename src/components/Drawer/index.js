@@ -57,7 +57,7 @@ class Header extends Component {
                         </div>
                         <Hidden xsDown>
                             <Typography variant="h6" noWrap>
-                                Switcheo Exporter v2
+                                {this.props.address.address}
                             </Typography>
                         </Hidden>
                         <div className={this.props.classes.pageTitle} />

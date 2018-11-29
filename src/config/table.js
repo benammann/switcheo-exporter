@@ -77,9 +77,10 @@ export const columns = [
 export const options = {
     selectableRows: false,
     print: false,
+    responsive: 'scroll',
     textLabels: {
         body: {
-            noMatch: "Sorry, no trades have been made with this address yet",
+            noMatch: "Can't find any trades",
         }
     }
 };
