@@ -9,7 +9,7 @@ import { convertOrders } from "../../helpers/convertOrders";
 
 export const fetchOrders = (resetLoading = false) => (dispatch, getState) => {
 
-        const {addressHashed, addressType} = getState().address;
+        const {addressHashed, addressType} = getState().address.address;
 
         if(addressHashed && addressType) {
 

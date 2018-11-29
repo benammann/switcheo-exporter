@@ -57,7 +57,7 @@ class Header extends Component {
                         </div>
                         <Hidden xsDown>
                             <Typography variant="h6" noWrap>
-                                {this.props.address.address}
+                                {this.props.address.address.address}
                             </Typography>
                         </Hidden>
                         <div className={this.props.classes.pageTitle} />

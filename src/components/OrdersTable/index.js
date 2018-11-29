@@ -20,7 +20,7 @@ class OrdersTable extends Component {
                         {
                             ...options,
                             downloadOptions: {
-                                filename: `switcheonetwork_${this.props.address.addressType}_${this.props.address.address}`
+                                filename: `switcheonetwork_${this.props.address.address.address.addressType}_${this.props.address.address.address}`
                             }
                         }
                     }

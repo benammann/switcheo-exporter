@@ -18,11 +18,11 @@ export const toggleNetwork = () => (dispatch, getState) => {
     dispatch({
         type: SWITCHEO_TOGGLE_NETWORK,
     });
-    if(getState().address.address) {
+    if(getState().address.address.address) {
         /**
          * In case an address is set, its orders need to reload and rerender
          */
-        dispatch(setAddress(getState().address.address, true));
+        dispatch(setAddress(getState().address.address.address, true));
         /**
          * TODO: implement raiseNotification
          */
