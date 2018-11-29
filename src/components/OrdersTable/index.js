@@ -13,7 +13,7 @@ class OrdersTable extends Component {
         return (
             <MuiThemeProvider theme={darkTable}>
                 <MUIDataTable
-                    title={`${this.props.address.addressType}: ${this.props.address.address}`}
+                    title={"Trade History"}
                     data={this.props.address.orders || []}
                     columns={columns}
                     options={
