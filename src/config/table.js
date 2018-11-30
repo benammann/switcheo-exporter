@@ -32,7 +32,10 @@ export const columns = [
         name: "Type"
     },
     {
-        name: "Amount"
+        name: "Amount",
+        options: {
+            filter: false
+        }
     },
     {
         name: "Order Price",
