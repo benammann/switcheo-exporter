@@ -8,6 +8,8 @@ import WebIcon from "@material-ui/icons/Web";
 import Typography from "@material-ui/core/Typography/Typography";
 import CodeIcon from '@material-ui/icons/Code';
 
+import packageJson from '../../../package.json'
+
 const styles = theme => ({
     links: {
         paddingTop: 10
@@ -45,6 +47,9 @@ class Footer extends Component {
                             width: '30%',
                             height: 'auto'
                         }}/></a>
+                </div>
+                <div align="center" className={this.props.classes.ghPages}>
+                    <Typography style={{position: 'absolute', top: 5, right: 5, color: 'gray'}}>{packageJson.name} v{packageJson.version}</Typography>
                 </div>
             </div>
         )
