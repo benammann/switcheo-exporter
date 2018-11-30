@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
@@ -24,13 +24,17 @@ class Footer extends Component {
             <div>
                 <div align="center" className={this.props.classes.links}>
                     <Tooltip title="Go to switcheo.exchange">
-                        <IconButton onClick={() => {window.open("https://switcheo.exchange/", "_blank")}}>
-                            <WebIcon />
+                        <IconButton onClick={() => {
+                            window.open("https://switcheo.exchange/", "_blank")
+                        }}>
+                            <WebIcon/>
                         </IconButton>
                     </Tooltip>
                     <Tooltip title="Open github project">
-                        <IconButton onClick={() => {window.open("https://github.com/benammann/switcheo-exporter", "_blank")}}>
-                            <CodeIcon />
+                        <IconButton onClick={() => {
+                            window.open("https://github.com/benammann/switcheo-exporter", "_blank")
+                        }}>
+                            <CodeIcon/>
                         </IconButton>
                     </Tooltip>
                 </div>
@@ -40,7 +44,7 @@ class Footer extends Component {
                         <img src={"./gh_pages.svg"} alt="github pages" style={{
                             width: '30%',
                             height: 'auto'
-                        }} /></a>
+                        }}/></a>
                 </div>
             </div>
         )

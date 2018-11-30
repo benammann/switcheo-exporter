@@ -1,16 +1,16 @@
 branches:
   only:
-  - master
+    - master
 language: node_js
 node_js:
-- "stable"
+  - "stable"
 cache:
   directories:
-  - node_modules
+    - node_modules
 git:
   depth: 1
 script:
-- npm run build
+  - npm run build
 deploy:
   provider: pages
   skip_cleanup: true

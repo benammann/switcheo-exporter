@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
-import { fetchContracts } from "../../actions/switcheo/contracts/fetchContracts";
-import { fetchTokens } from "../../actions/switcheo/tokens/fetchTokens";
-import { setAddress } from "../../actions/address/address/setAddress";
-import { raiseError } from "../../actions/layout/errors/raiseError";
+import {fetchContracts} from "../../actions/switcheo/contracts/fetchContracts";
+import {fetchTokens} from "../../actions/switcheo/tokens/fetchTokens";
+import {setAddress} from "../../actions/address/address/setAddress";
+import {raiseError} from "../../actions/layout/errors/raiseError";
 
-import { fetchOrders } from "../../actions/address/orders/fetchOrders";
+import {fetchOrders} from "../../actions/address/orders/fetchOrders";
 
 import Spinner from '../../components/Spinner'
 
@@ -24,7 +24,7 @@ class TradesPage extends Component {
     }
 
     renderOrdersTable = () => {
-        return !this.props.layout.loading ? <OrdersTable /> : <Spinner/>
+        return !this.props.layout.loading ? <OrdersTable/> : <Spinner/>
     };
 
     render() {

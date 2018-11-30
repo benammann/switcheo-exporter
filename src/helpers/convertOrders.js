@@ -31,7 +31,7 @@ export const convertOrders = (orders, tokens, contracts, tickers) => {
         //fam = "Fill and Make"
         for (const fam of fams) {
 
-            if(!order.blockchain) {
+            if (!order.blockchain) {
                 continue
             }
 
@@ -86,9 +86,9 @@ export const convertOrders = (orders, tokens, contracts, tickers) => {
                 const currentPrice = tickers && tickers[splittedPair[0]] && tickers[splittedPair[0]][splittedPair[1]] ? tickers[splittedPair[0]][splittedPair[1]] : '?';
 
                 //calculate gains
-                let gains = currentPrice !== '?' ?  (((parseFloat(currentPrice).toFixed(8) / orderPrice ) * 100 - 100 )).toFixed(2): '?';
+                let gains = currentPrice !== '?' ? (((parseFloat(currentPrice).toFixed(8) / orderPrice) * 100 - 100)).toFixed(2) : '?';
 
-                if(orderType === 'SELL' && gains > 0) {
+                if (orderType === 'SELL' && gains > 0) {
                     gains = gains * -1;
                 }
 
@@ -98,7 +98,7 @@ export const convertOrders = (orders, tokens, contracts, tickers) => {
                  */
                 if (!fam.is_make) {
                     fee_symbol = Object.keys(tokens).find(symbol => tokens[symbol].hash === fee_asset_id);
-                    if(fee_symbol) {
+                    if (fee_symbol) {
                         const fee_token_precision = tokens[fee_symbol].decimals;
                         feePaid = parseFloat(fee_amount) / Math.pow(10, fee_token_precision);
                     } else {

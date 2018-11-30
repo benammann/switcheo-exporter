@@ -10,7 +10,7 @@ export const addAddressToHistory = (address = '') => dispatch => {
     dispatch(removeAddressFromHistory(address));
 
     let currentHistory = localStorage.getItem("address/history");
-    if(currentHistory) {
+    if (currentHistory) {
         currentHistory = JSON.parse(currentHistory)
     } else {
         currentHistory = [];
