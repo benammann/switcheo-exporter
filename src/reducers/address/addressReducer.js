@@ -1,7 +1,4 @@
-import {
-    ADDRESS_SET,
-    ADDRESS_RESET
-} from '../../actions/address/actions'
+import {ADDRESS_RESET, ADDRESS_SET} from '../../actions/address/actions'
 
 const initialState = {
     address: '',

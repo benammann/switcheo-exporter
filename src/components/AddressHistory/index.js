@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -10,7 +10,7 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 
-import { fetchAddressHistory } from "../../actions/address/history/fetchAddressHistory";
+import {fetchAddressHistory} from "../../actions/address/history/fetchAddressHistory";
 
 import {bindActionCreators} from "redux";
 import connect from "react-redux/es/connect/connect";
@@ -24,7 +24,7 @@ class AddressHistory extends Component {
 
     onAddressClick = (address) => {
         this.closeDialog();
-        if(this.props.onAddressClick) {
+        if (this.props.onAddressClick) {
             this.props.onAddressClick(address)
         }
     };
@@ -36,8 +36,10 @@ class AddressHistory extends Component {
     };
 
     renderButton = () => {
-        if(this.props.address.history.length) {
-            return <Button style={{width: '100%'}} color={"primary"} onClick={() => {this.setState({open: true})}}>Show History</Button>
+        if (this.props.address.history.length) {
+            return <Button style={{width: '100%'}} color={"primary"} onClick={() => {
+                this.setState({open: true})
+            }}>Show History</Button>
         }
     };
 
@@ -55,9 +57,11 @@ class AddressHistory extends Component {
                     <DialogTitle id={"addr-history-title"}>Address History</DialogTitle>
                     <DialogContent>
                         <List>
-                            {this.props.address.history.slice(0,5).map((address, index) => {
+                            {this.props.address.history.slice(0, 5).map((address, index) => {
                                 return (
-                                    <ListItem key={index} button onClick={() => {this.onAddressClick(address)}}>
+                                    <ListItem key={index} button onClick={() => {
+                                        this.onAddressClick(address)
+                                    }}>
                                         <ListItemText>{address}</ListItemText>
                                     </ListItem>
                                 )
@@ -73,6 +77,7 @@ class AddressHistory extends Component {
 
         )
     }
+
     /*
     render() {
         if(this.props.address.history.length) {

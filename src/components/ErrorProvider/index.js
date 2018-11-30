@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
-import { hideError } from "../../actions/layout/errors/hideError";
+import {hideError} from "../../actions/layout/errors/hideError";
 
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -17,7 +17,8 @@ class ErrorProvider extends Component {
     render() {
         return (
             <div>
-                <Dialog open={this.props.layout.error.show} onClose={this.props.hideError} aria-labelledby={"error-dialog"}>
+                <Dialog open={this.props.layout.error.show} onClose={this.props.hideError}
+                        aria-labelledby={"error-dialog"}>
                     <DialogTitle id={"error-dialog"}>Error</DialogTitle>
                     <DialogContent>
                         <Typography component={"b"}>{this.props.layout.error.message}</Typography>

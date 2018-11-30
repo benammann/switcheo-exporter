@@ -1,4 +1,4 @@
-import { SWITCHEO_FETCH_TICKERS } from "../../actions/switcheo/actions";
+import {SWITCHEO_FETCH_TICKERS} from "../../actions/switcheo/actions";
 
 /**
  * This reducer handles the tickers delivered by api.switcheo.exchange
@@ -6,7 +6,7 @@ import { SWITCHEO_FETCH_TICKERS } from "../../actions/switcheo/actions";
  * @param action
  */
 export default (tickers = {}, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case SWITCHEO_FETCH_TICKERS:
             return action.tickers;
         default:

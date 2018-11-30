@@ -1,5 +1,5 @@
-import { SWITCHEO_FETCH_TICKERS } from "../actions";
-import { LAYOUT_RAISE_ERROR } from "../../layout/actions";
+import {SWITCHEO_FETCH_TICKERS} from "../actions";
+import {LAYOUT_RAISE_ERROR} from "../../layout/actions";
 
 /**
  * Fetches the last price ( tickers ) from /v2/tickers/last_price
@@ -16,7 +16,7 @@ export const fetchTickers = (callback) => (dispatch, getState) => {
                 type: SWITCHEO_FETCH_TICKERS,
                 tickers
             });
-            if(callback) {
+            if (callback) {
                 return callback()
             }
         })
@@ -25,7 +25,7 @@ export const fetchTickers = (callback) => (dispatch, getState) => {
                 type: LAYOUT_RAISE_ERROR,
                 message: err.message
             });
-            if(callback) {
+            if (callback) {
                 return callback()
             }
         })

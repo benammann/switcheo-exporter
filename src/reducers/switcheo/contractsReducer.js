@@ -1,4 +1,4 @@
-import { SWITCHEO_FETCH_CONTRACTS } from "../../actions/switcheo/actions";
+import {SWITCHEO_FETCH_CONTRACTS} from "../../actions/switcheo/actions";
 
 /**
  * This reducer handles the contracts delivered by switcheo.network

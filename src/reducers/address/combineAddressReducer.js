@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux'
+import {combineReducers} from 'redux'
 
 import address from './addressReducer'
 import history from './historyReducer'

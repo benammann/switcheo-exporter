@@ -1,4 +1,4 @@
-import { LAYOUT_RAISE_ERROR } from '../actions'
+import {LAYOUT_RAISE_ERROR} from '../actions'
 
 /**
  * Displays an error message

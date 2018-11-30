@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux'
+import {combineReducers} from 'redux'
 
 import error from './errorReducer'
 import loading from './loadingReducer'

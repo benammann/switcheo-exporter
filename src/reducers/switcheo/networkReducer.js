@@ -1,4 +1,4 @@
-import { SWITCHEO_TOGGLE_NETWORK } from "../../actions/switcheo/actions";
+import {SWITCHEO_TOGGLE_NETWORK} from "../../actions/switcheo/actions";
 
 export const mainNet = "api";
 export const testNet = "test-api";

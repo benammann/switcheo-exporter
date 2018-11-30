@@ -1,4 +1,4 @@
-import { SWITCHEO_FETCH_TOKENS } from "../../actions/switcheo/actions";
+import {SWITCHEO_FETCH_TOKENS} from "../../actions/switcheo/actions";
 
 /**
  * This reducer handles the tokens delivered by switcheo.network
