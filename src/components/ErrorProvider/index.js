@@ -10,7 +10,6 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 
 class ErrorProvider extends Component {
 
@@ -24,7 +23,6 @@ class ErrorProvider extends Component {
                 aria-labelledby="responsive-dialog-title"
                 color={"primary"}
             >
-                <DialogTitle id="responsive-dialog-title">{"Error"}</DialogTitle>
                 <DialogContent>
                     <DialogContentText>{this.props.layout.error.message}</DialogContentText>
                 </DialogContent>
