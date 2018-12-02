@@ -44,7 +44,6 @@ export const columns = [
         name: "Current Price",
         options: {
             filter: false,
-            display: 'false',
         }
     },
     {
