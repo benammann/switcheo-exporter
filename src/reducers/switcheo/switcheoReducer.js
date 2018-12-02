@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 
 import contracts from './contractsReducer';
 import tokens from './tokensReducer';

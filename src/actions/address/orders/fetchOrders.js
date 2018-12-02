@@ -1,75 +1,75 @@
-import { ADDRESS_FETCH_ORDERS } from "../actions";
-import { LAYOUT_RAISE_ERROR } from "../../layout/actions";
+import {ADDRESS_FETCH_ORDERS} from "../actions";
+import {LAYOUT_RAISE_ERROR} from "../../layout/actions";
 
-import { history } from "../../../store";
+import {history} from "../../../store";
 
-import { unsetLoading } from "../../layout/loading/unsetLoading";
+import {unsetLoading} from "../../layout/loading/unsetLoading";
 
-import { convertOrders } from "../../../helpers/convertOrders";
+import {convertOrders} from "../../../helpers/convertOrders";
 
 export const fetchOrders = (resetLoading = false) => (dispatch, getState) => {
 
-        const {addressHashed, addressType} = getState().address.address;
+    const {addressHashed, addressType} = getState().address.address;
 
-        if(addressHashed && addressType) {
+    if (addressHashed && addressType) {
 
-            const contracts = getState().switcheo.contracts[addressType];
-            const network = getState().switcheo.network;
+        const contracts = getState().switcheo.contracts[addressType];
+        const network = getState().switcheo.network;
 
-            if(contracts) {
+        if (contracts) {
 
-                fetchOrdersFromContracts(addressHashed, Object.values(contracts), network)
-                    .then((orders) => {
+            fetchOrdersFromContracts(addressHashed, Object.values(contracts), network)
+                .then((orders) => {
 
-                        //merge orders from multiple contracts
-                        orders = [].concat.apply([], orders);
-                        orders = convertOrders(orders, getState().switcheo.tokens, getState().switcheo.contracts, getState().switcheo.tickers);
+                    //merge orders from multiple contracts
+                    orders = [].concat.apply([], orders);
+                    orders = convertOrders(orders, getState().switcheo.tokens, getState().switcheo.contracts, getState().switcheo.tickers);
 
-                        dispatch({
-                            type: ADDRESS_FETCH_ORDERS,
-                            orders
-                        });
+                    dispatch({
+                        type: ADDRESS_FETCH_ORDERS,
+                        orders
+                    });
 
-                        if(resetLoading) {
-                            dispatch(unsetLoading())
-                        }
+                    if (resetLoading) {
+                        dispatch(unsetLoading())
+                    }
 
-                    })
-                    .catch((err) => {
-                        console.log(err)
-                        dispatch({
-                            type: LAYOUT_RAISE_ERROR,
-                            message: `Could not fetch orders: ${err.message}`
-                        });
-                        if(resetLoading) {
-                            dispatch(unsetLoading())
-                        }
-                        history.push("/")
-                    })
-
-            } else {
-
-                dispatch({
-                    type: LAYOUT_RAISE_ERROR,
-                    message: `Could not fetch orders: No contracts available for ${addressType}`
-                });
-                if(resetLoading) {
-                    dispatch(unsetLoading())
-                }
-                history.push("/")
-
-            }
+                })
+                .catch((err) => {
+                    console.log(err);
+                    dispatch({
+                        type: LAYOUT_RAISE_ERROR,
+                        message: `Could not fetch orders: ${err.message}`
+                    });
+                    if (resetLoading) {
+                        dispatch(unsetLoading())
+                    }
+                    history.push("/")
+                })
 
         } else {
+
             dispatch({
                 type: LAYOUT_RAISE_ERROR,
-                message: 'Could not fetch orders: No address is given'
-            })
-            if(resetLoading) {
+                message: `Could not fetch orders: No contracts available for ${addressType}`
+            });
+            if (resetLoading) {
                 dispatch(unsetLoading())
             }
             history.push("/")
+
         }
+
+    } else {
+        dispatch({
+            type: LAYOUT_RAISE_ERROR,
+            message: 'Could not fetch orders: No address is given'
+        });
+        if (resetLoading) {
+            dispatch(unsetLoading())
+        }
+        history.push("/")
+    }
 };
 
 /**
@@ -94,7 +94,7 @@ const fetchOrdersFromContract = async (addressHashed, contractHash, network) => 
  * @returns {Promise<any[]>}
  */
 const fetchOrdersFromContracts = async (addressHashed, contractHashes, network) => {
-    return Promise.all(contractHashes.map((async(contractHash) => {
+    return Promise.all(contractHashes.map((async (contractHash) => {
         /*await fetchOrdersFromContract(addressHashed, contractHash, network)
             .then((orders) => {
                if(orders) {

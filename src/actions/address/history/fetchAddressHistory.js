@@ -8,7 +8,7 @@ export const fetchAddressHistory = () => dispatch => {
 
     let addrHistory = localStorage.getItem("address/history");
 
-    if(addrHistory) {
+    if (addrHistory) {
         addrHistory = JSON.parse(addrHistory);
     } else {
         localStorage.setItem("address/history", "[]");

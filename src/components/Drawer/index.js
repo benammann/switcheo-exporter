@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router'
+import {withRouter} from 'react-router'
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import {bindActionCreators} from "redux";
 import connect from "react-redux/es/connect/connect";
 
@@ -18,8 +18,8 @@ import Hidden from '@material-ui/core/Hidden';
 
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
-import { toggleNetwork } from "../../actions/switcheo/network/toggleNetwork";
-import { mainNet } from "../../reducers/switcheo/networkReducer";
+import {toggleNetwork} from "../../actions/switcheo/network/toggleNetwork";
+import {mainNet} from "../../reducers/switcheo/networkReducer";
 
 const styles = theme => ({
     '@global': {
@@ -47,7 +47,7 @@ class Header extends Component {
     render() {
         return (
             <React.Fragment>
-                <CssBaseline />
+                <CssBaseline/>
                 <AppBar position="static" color="default" className={this.props.classes.appBar}>
                     <Toolbar>
                         <div>
@@ -60,9 +60,12 @@ class Header extends Component {
                                 {this.props.address.address.address}
                             </Typography>
                         </Hidden>
-                        <div className={this.props.classes.pageTitle} />
+                        <div className={this.props.classes.pageTitle}/>
                         <FormGroup row>
-                            <FormControlLabel control={<Switch color={"primary"} onChange={this.props.toggleNetwork} disabled={this.props.layout.loading} checked={this.props.switcheo.network === mainNet ? true : false} />} label={this.props.switcheo.network === mainNet ? "MainNet" : "TestNet"}/>
+                            <FormControlLabel control={<Switch color={"primary"} onChange={this.props.toggleNetwork}
+                                                               disabled={this.props.layout.loading}
+                                                               checked={this.props.switcheo.network === mainNet ? true : false}/>}
+                                              label={this.props.switcheo.network === mainNet ? "MainNet" : "TestNet"}/>
                         </FormGroup>
 
                     </Toolbar>

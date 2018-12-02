@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import MUIDataTable from "mui-datatables";
 import {MuiThemeProvider} from '@material-ui/core/styles'
 import {darkTable} from "../../config/theme";
 
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
 import {columns, options} from '../../config/table'
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
@@ -7,6 +7,8 @@ import IconButton from "@material-ui/core/IconButton/IconButton";
 import WebIcon from "@material-ui/icons/Web";
 import Typography from "@material-ui/core/Typography/Typography";
 import CodeIcon from '@material-ui/icons/Code';
+
+import packageJson from '../../../package.json'
 
 const styles = theme => ({
     links: {
@@ -24,13 +26,17 @@ class Footer extends Component {
             <div>
                 <div align="center" className={this.props.classes.links}>
                     <Tooltip title="Go to switcheo.exchange">
-                        <IconButton onClick={() => {window.open("https://switcheo.exchange/", "_blank")}}>
-                            <WebIcon />
+                        <IconButton onClick={() => {
+                            window.open("https://switcheo.exchange/", "_blank")
+                        }}>
+                            <WebIcon/>
                         </IconButton>
                     </Tooltip>
                     <Tooltip title="Open github project">
-                        <IconButton onClick={() => {window.open("https://github.com/benammann/switcheo-exporter", "_blank")}}>
-                            <CodeIcon />
+                        <IconButton onClick={() => {
+                            window.open("https://github.com/benammann/switcheo-exporter", "_blank")
+                        }}>
+                            <CodeIcon/>
                         </IconButton>
                     </Tooltip>
                 </div>
@@ -40,7 +46,10 @@ class Footer extends Component {
                         <img src={"./gh_pages.svg"} alt="github pages" style={{
                             width: '30%',
                             height: 'auto'
-                        }} /></a>
+                        }}/></a>
+                </div>
+                <div align="center" className={this.props.classes.ghPages}>
+                    <Typography style={{position: 'absolute', top: 5, right: 5, color: 'gray'}}>{packageJson.name} v{packageJson.version}</Typography>
                 </div>
             </div>
         )

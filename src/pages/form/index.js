@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import update from 'immutability-helper'
 
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
@@ -16,10 +16,10 @@ import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 
 
-import { isAddressValid } from "../../helpers/isAddressValid";
-import { resetAddress } from "../../actions/address/address/resetAddress";
+import {isAddressValid} from "../../helpers/isAddressValid";
+import {resetAddress} from "../../actions/address/address/resetAddress";
 
-import { fetchAddressHistory } from "../../actions/address/history/fetchAddressHistory";
+import {fetchAddressHistory} from "../../actions/address/history/fetchAddressHistory";
 
 import AddressHistory from '../../components/AddressHistory'
 import Footer from '../../components/Footer'
@@ -104,7 +104,7 @@ class HomePage extends Component {
      */
     loadTrades = (event) => {
         event.preventDefault();
-        if(this.state.isValid) {
+        if (this.state.isValid) {
             this.props.history.push(`/address/${this.state.address}`)
         }
     };
@@ -112,9 +112,9 @@ class HomePage extends Component {
     render() {
         return (
             <main className={this.props.classes.main}>
-                <CssBaseline />
+                <CssBaseline/>
                 <Paper className={this.props.classes.paper}>
-                   <img src={"./switcheonetwork_logo.svg"} alt={"Switcheo Network Logo"}/>
+                    <img src={"./switcheonetwork_logo.svg"} alt={"Switcheo Network Logo"}/>
                     <Typography component="h1" variant="h6">
                         Trades Exporter
                     </Typography>
@@ -122,7 +122,9 @@ class HomePage extends Component {
                         <form onSubmit={this.loadTrades}>
                             <FormControl margin="normal" required fullWidth>
                                 <InputLabel htmlFor="public_address">Public Address</InputLabel>
-                                <Input id="public_address" name="public_address" autoFocus onChange={event => this.handleAddressChange(event.target.value)} value={this.state.address} autoComplete={"off"}/>
+                                <Input id="public_address" name="public_address" autoFocus
+                                       onChange={event => this.handleAddressChange(event.target.value)}
+                                       value={this.state.address} autoComplete={"off"}/>
                             </FormControl>
                             <Button
                                 type="submit"
@@ -140,7 +142,7 @@ class HomePage extends Component {
                 <div className={this.props.classes.form}>
                     <AddressHistory onAddressClick={this.handleAddressChange}/>
                 </div>
-                <Footer />
+                <Footer/>
             </main>
         );
     }

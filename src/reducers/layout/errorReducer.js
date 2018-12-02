@@ -1,7 +1,4 @@
-import {
-    LAYOUT_RAISE_ERROR,
-    LAYOUT_HIDE_ERROR
-} from "../../actions/layout/actions";
+import {LAYOUT_HIDE_ERROR, LAYOUT_RAISE_ERROR} from "../../actions/layout/actions";
 
 /**
  * This reducer handles the error popup
