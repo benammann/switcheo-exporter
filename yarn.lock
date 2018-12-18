@@ -788,18 +788,18 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@cityofzion/neon-api@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@cityofzion/neon-api/-/neon-api-4.3.0.tgz#24cd06ab03fd2557fb73955b7eb1f51327c6ed3f"
-  integrity sha512-WGdP/Vi2jWhWYT89+SLmn7NricAB1XK2vhIJ0oiLnRdZy3oEUWpYEIPUzTKb2r1U1NPQUtKiOz9zBtJ5yHzlZg==
+"@cityofzion/neon-api@^4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@cityofzion/neon-api/-/neon-api-4.3.1.tgz#fc5648c5d58c6c0ee353faa334dc80c307488215"
+  integrity sha512-fqEhrsnCuSL70U2JsA/lZzxr6HHFEgrnRdsN1FGOnea7KOWEasAbDdo9NUhQg68VaYZBwiGIq98usEvoHfGkWw==
   dependencies:
-    "@cityofzion/neon-core" "^4.3.0"
+    "@cityofzion/neon-core" "^4.3.1"
     axios "0.18.0"
 
-"@cityofzion/neon-core@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@cityofzion/neon-core/-/neon-core-4.3.0.tgz#cf68b88b6a15891f1b97e5f666952cdaa7f829be"
-  integrity sha512-qOWZiJ9Wm+S7VvhbVwHIRcwxq68m00CBIvX8HrwLMeJYHp8G6bs8kdkUlekghNQWS8W4wUX/mqbbNUppxBw+dA==
+"@cityofzion/neon-core@^4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@cityofzion/neon-core/-/neon-core-4.3.1.tgz#1f5965f029197ec32db4992ac46be7acade0035a"
+  integrity sha512-olBYmtpwevHnnteic7vFiEwu+TDUi5YKzZaODFgSg5uMmTUzu308JZwYw7uzTbK6/+8bE3JmxDMQP2ti+uB8Pw==
   dependencies:
     "@types/bn.js" "4.11.3"
     "@types/bs58" "3.0.30"
@@ -820,21 +820,21 @@
     secure-random "1.1.1"
     wif "2.0.6"
 
-"@cityofzion/neon-js@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@cityofzion/neon-js/-/neon-js-4.3.0.tgz#7a606f05cd87018aaaf4328e20f35141c6cd09c0"
-  integrity sha512-XAa/rDuLEZ96Vlk9UHqk5Vcv4vDlc5P/jOfRGChbL8C3kJMyMJnCVXIdjrz8wby7pfv4lWV8mdKmjCHc+9yZOA==
+"@cityofzion/neon-js@^4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@cityofzion/neon-js/-/neon-js-4.3.1.tgz#0cbebb55380fd33b55f37000771220916bb9b8ee"
+  integrity sha512-Bsam5enngjoWYDaRvPhEmifnbIQcWpZAZrZXcOwYVk/P78BNv0RyFNv06NQHlSWaHXWhkEuTZd0e5k9qVxBSyw==
   dependencies:
-    "@cityofzion/neon-api" "^4.3.0"
-    "@cityofzion/neon-core" "^4.3.0"
-    "@cityofzion/neon-nep5" "^4.3.0"
+    "@cityofzion/neon-api" "^4.3.1"
+    "@cityofzion/neon-core" "^4.3.1"
+    "@cityofzion/neon-nep5" "^4.3.1"
 
-"@cityofzion/neon-nep5@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@cityofzion/neon-nep5/-/neon-nep5-4.3.0.tgz#df871005e30cbf4f936e4544ce7c4340b07de4bb"
-  integrity sha512-YMFcJCN9pq8/iskkI2G63ueGINpORCTZfxlUE8h/IBPPK4ixk8jee21MtDehJwAGMfpA0w/Hbaq+L7DnMXX7Pw==
+"@cityofzion/neon-nep5@^4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@cityofzion/neon-nep5/-/neon-nep5-4.3.1.tgz#30ff406e1887957140c012c1261d1d58ce621b97"
+  integrity sha512-udVbsFEuhIhqFpC3BC+gCZozn7HZ5W+UFPi7oicmoPyGAoVMJ7FwQkq6iunbAByCXLsmTNpGbHrNCE9XSouSDQ==
   dependencies:
-    "@cityofzion/neon-core" "^4.3.0"
+    "@cityofzion/neon-core" "^4.3.1"
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
