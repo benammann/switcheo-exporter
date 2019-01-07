@@ -741,7 +741,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@7.2.0":
+"@babel/runtime@7.2.0", "@babel/runtime@^7.2.0":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.2.0.tgz#b03e42eeddf5898e00646e4c840fa07ba8dcad7f"
   integrity sha512-oouEibCbHMVdZSDlJBO6bZmID/zA/G/Qx3H1d3rSNPTD+L8UNKvCat7aKWSJ74zYbm5zWGh0GQN0hKj8zYFTCg==
@@ -752,13 +752,6 @@
   version "7.1.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.1.5.tgz#4170907641cf1f61508f563ece3725150cc6fe39"
   integrity sha512-xKnPpXG/pvK1B90JkwwxSGii90rQGKtzcMt2gI5G6+M0REXaq6rOHsGC2ay6/d0Uje7zzvSzjEzfR3ENhFlrfA==
-  dependencies:
-    regenerator-runtime "^0.12.0"
-
-"@babel/runtime@^7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.2.0.tgz#b03e42eeddf5898e00646e4c840fa07ba8dcad7f"
-  integrity sha512-oouEibCbHMVdZSDlJBO6bZmID/zA/G/Qx3H1d3rSNPTD+L8UNKvCat7aKWSJ74zYbm5zWGh0GQN0hKj8zYFTCg==
   dependencies:
     regenerator-runtime "^0.12.0"
 
@@ -795,25 +788,25 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@cityofzion/neon-api@^4.3.1":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@cityofzion/neon-api/-/neon-api-4.3.1.tgz#fc5648c5d58c6c0ee353faa334dc80c307488215"
-  integrity sha512-fqEhrsnCuSL70U2JsA/lZzxr6HHFEgrnRdsN1FGOnea7KOWEasAbDdo9NUhQg68VaYZBwiGIq98usEvoHfGkWw==
+"@cityofzion/neon-api@^4.3.3":
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/@cityofzion/neon-api/-/neon-api-4.3.3.tgz#c474f3837472778a89f08013aae3c8397f8e5dae"
+  integrity sha512-ZcqoogYUP4S81eY8+wE9LX+QFEAOfauM2JZzp5uqht16xjR/IG3kMsW19KMuFyxGJKxZ1NgKOXTfpH1ppXIDQA==
   dependencies:
-    "@cityofzion/neon-core" "^4.3.1"
+    "@cityofzion/neon-core" "^4.3.2"
     axios "0.18.0"
 
-"@cityofzion/neon-core@^4.3.1":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@cityofzion/neon-core/-/neon-core-4.3.1.tgz#1f5965f029197ec32db4992ac46be7acade0035a"
-  integrity sha512-olBYmtpwevHnnteic7vFiEwu+TDUi5YKzZaODFgSg5uMmTUzu308JZwYw7uzTbK6/+8bE3JmxDMQP2ti+uB8Pw==
+"@cityofzion/neon-core@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@cityofzion/neon-core/-/neon-core-4.3.2.tgz#8e685dd4f94ea3c47b65ce3259262b24232d97f8"
+  integrity sha512-ERJEc6/p+8d8ZfJiAP2Sao+GTR9Qxp3qp24L3+Bdmk69AdJo4T0SoP934Od2S3MKRB9POF3GNzuP2vCY+VYcew==
   dependencies:
     "@types/bn.js" "4.11.3"
-    "@types/bs58" "3.0.30"
+    "@types/bs58" "4.0.0"
     "@types/crypto-js" "3.1.43"
-    "@types/elliptic" "6.4.0"
+    "@types/elliptic" "6.4.1"
     "@types/loglevel" "1.5.3"
-    "@types/node" "10.12.10"
+    "@types/node" "10.12.18"
     axios "0.18.0"
     bignumber.js "7.2.1"
     bn.js "4.11.8"
@@ -827,21 +820,21 @@
     secure-random "1.1.1"
     wif "2.0.6"
 
-"@cityofzion/neon-js@^4.3.1":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@cityofzion/neon-js/-/neon-js-4.3.1.tgz#0cbebb55380fd33b55f37000771220916bb9b8ee"
-  integrity sha512-Bsam5enngjoWYDaRvPhEmifnbIQcWpZAZrZXcOwYVk/P78BNv0RyFNv06NQHlSWaHXWhkEuTZd0e5k9qVxBSyw==
+"@cityofzion/neon-js@^4.3.3":
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/@cityofzion/neon-js/-/neon-js-4.3.3.tgz#805b910babd12e9c4b958cea25a35bd03597f5e2"
+  integrity sha512-0CCUmC2cP3NZvBqeCN5bDjqF6Z03G6GK4VUu/RPSvlaV8oUkuFsCF4uxacorXhpsmLhQGtS4xBZPGq3cyDuQ8A==
   dependencies:
-    "@cityofzion/neon-api" "^4.3.1"
-    "@cityofzion/neon-core" "^4.3.1"
-    "@cityofzion/neon-nep5" "^4.3.1"
+    "@cityofzion/neon-api" "^4.3.3"
+    "@cityofzion/neon-core" "^4.3.2"
+    "@cityofzion/neon-nep5" "^4.3.2"
 
-"@cityofzion/neon-nep5@^4.3.1":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@cityofzion/neon-nep5/-/neon-nep5-4.3.1.tgz#30ff406e1887957140c012c1261d1d58ce621b97"
-  integrity sha512-udVbsFEuhIhqFpC3BC+gCZozn7HZ5W+UFPi7oicmoPyGAoVMJ7FwQkq6iunbAByCXLsmTNpGbHrNCE9XSouSDQ==
+"@cityofzion/neon-nep5@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@cityofzion/neon-nep5/-/neon-nep5-4.3.2.tgz#10035efa7cdd20fd7c17168e2c4b0d0541d15101"
+  integrity sha512-EWjlW3xIDI3FifmGNnYTr6c0LkScYb4XpuzS+UzpFvlpnvyWlXUrIKQ42g+ongsKxuvXAifeCEC2Qfwp81XA+A==
   dependencies:
-    "@cityofzion/neon-core" "^4.3.1"
+    "@cityofzion/neon-core" "^4.3.2"
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
@@ -947,10 +940,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/bs58@3.0.30":
-  version "3.0.30"
-  resolved "https://registry.yarnpkg.com/@types/bs58/-/bs58-3.0.30.tgz#916ba10992465e56f81afc735e7935fd749893e1"
-  integrity sha1-kWuhCZJGXlb4GvxzXnk1/XSYk+E=
+"@types/bs58@4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/bs58/-/bs58-4.0.0.tgz#baec75cb007b419ede3ec6b3410d2c8f14c92fc5"
+  integrity sha512-gYX+MHD4G/R+YGYwdhG5gbJj4LsEQGr3Vg6gVDAbe7xC5Bn8dNNG2Lpo6uDX/rT5dE7VBj0rGEFuV8L0AEx4Rg==
   dependencies:
     "@types/base-x" "*"
 
@@ -959,10 +952,10 @@
   resolved "https://registry.yarnpkg.com/@types/crypto-js/-/crypto-js-3.1.43.tgz#b859347d6289ba13e347c335a4c9efa63337a748"
   integrity sha512-EHe/YKctU3IYNBsDmSOPX/7jLHPRlx8WaiDKSY9JCTnJ8XJeM4c0ZJvx+9Gxmr2s2ihI92R+3U/gNL1sq5oRuQ==
 
-"@types/elliptic@6.4.0":
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/@types/elliptic/-/elliptic-6.4.0.tgz#eed3bd9dc83184f0f08987c05eb82e58ea7fb5de"
-  integrity sha512-wf/Iecb9HDfbfnZfrk49FdRFlEb+2ZRFDVjmiRZFutQVeUMnEpDelvNCNeck85FD5GkxsBc8kJR41/wgZWfF6g==
+"@types/elliptic@6.4.1":
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/@types/elliptic/-/elliptic-6.4.1.tgz#7f922c6caa7f6f1022a33e3c39276c71e20348b1"
+  integrity sha512-RooUsMo8g+m4SfU8m4AOf88EvcIikO7PVIlE2ujmK4R0KO0bRSGuYPR5dLvVy+e9a24dFXnPYYX6zwIFYTdPDg==
   dependencies:
     "@types/bn.js" "*"
 
@@ -979,10 +972,15 @@
   resolved "https://registry.yarnpkg.com/@types/loglevel/-/loglevel-1.5.3.tgz#adfce55383edc5998a2170ad581b3e23d6adb5b8"
   integrity sha512-TzzIZihV+y9kxSg5xJMkyIkaoGkXi50isZTtGHObNHRqAAwjGNjSCNPI7AUAv0tZUKTq9f2cdkCUd/2JVZUTrA==
 
-"@types/node@*", "@types/node@10.12.10":
+"@types/node@*":
   version "10.12.10"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.10.tgz#4fa76e6598b7de3f0cb6ec3abacc4f59e5b3a2ce"
   integrity sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+
+"@types/node@10.12.18":
+  version "10.12.18"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.18.tgz#1d3ca764718915584fcd9f6344621b7672665c67"
+  integrity sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ==
 
 "@types/prop-types@*":
   version "15.5.6"
@@ -4605,13 +4603,6 @@ hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
-
-hoist-non-react-statics@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.1.0.tgz#42414ccdfff019cd2168168be998c7b3bd5245c0"
-  integrity sha512-MYcYuROh7SBM69xHGqXEwQqDux34s9tz+sCnxJmN18kgWh6JFdTw/5YdZtqsOdZJXddE/wUpCzfEdDrJj8p0Iw==
-  dependencies:
-    react-is "^16.3.2"
 
 hoist-non-react-statics@^3.2.1:
   version "3.2.1"
