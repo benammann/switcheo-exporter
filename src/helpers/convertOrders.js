@@ -77,7 +77,23 @@ export const convertOrders = (orders, tokens, contracts, tickers) => {
                 const towardToken = tokens[towardTokenSymbol];
                 // use 8 as default precision in case the token is not listed anymore
                 const decimals = towardToken === undefined ? 8 : tokens[splittedPair[0].toUpperCase()].decimals;
-                const amount = parseFloat(side === "BUY" ? fill_amount : want_amount) / Math.pow(10, decimals);
+                //const amount = parseFloat(side === "BUY" ? fill_amount : want_amount) / Math.pow(10, decimals);
+
+                let amount = 0.0;
+                if(status === "cancelled") {
+                    /**
+                     * Since order has been cancelled, the fill amount is undefined
+                     * We must calculate the token amount then
+                     */
+                    const total = amount = parseFloat(want_amount) / Math.pow(10, decimals);
+                    amount = total / price;
+                } else {
+                    /**
+                     * Order has been filled
+                     * -> just parse the fill amount
+                     */
+                    amount = parseFloat(fill_amount) / Math.pow(10, decimals);
+                }
 
                 let fee_symbol = '-';
                 let feePaid = 0.0;
