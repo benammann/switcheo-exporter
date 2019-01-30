@@ -73,20 +73,6 @@ export const fetchOrders = (resetLoading = false) => (dispatch, getState) => {
 };
 
 /**
- * Fetches orders made by address from a single contract
- * @param addressHashed
- * @param contractHash
- * @param network
- * @returns {Promise<Response>}
- */
-const fetchOrdersFromContract = async (addressHashed, contractHash, network) => {
-
-    const requestUrl = `https://${network}.switcheo.network/v2/orders?address=${addressHashed}&contract_hash=${contractHash}`;
-    return await fetch(requestUrl).then(res => res.json())
-
-};
-
-/**
  * Fetches orders made by address from a single contract bulkwise
  * @param addressHashed
  * @param contractHash
