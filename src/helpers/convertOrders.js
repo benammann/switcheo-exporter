@@ -98,6 +98,8 @@ export const convertOrders = (orders, tokens, contracts, tickers) => {
                     }
                 }
 
+                amount = parseFloat(amount.toFixed(decimals));
+
                 let fee_symbol = '-';
                 let feePaid = 0.0;
 
