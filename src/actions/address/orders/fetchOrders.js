@@ -87,6 +87,44 @@ const fetchOrdersFromContract = async (addressHashed, contractHash, network) => 
 };
 
 /**
+ * Fetches orders made by address from a single contract bulkwise
+ * @param addressHashed
+ * @param contractHash
+ * @param network
+ * @returns {Promise<Array>}
+ */
+const fetchOrdersFromContractBulkwise = async (addressHashed, contractHash, network) => {
+
+    const limit = 200;
+
+    let hasResults = true;
+    let beforeId = "";
+
+    let fetchedOrders = [];
+
+    while(hasResults) {
+        let requestUrl = `https://${network}.switcheo.network/v2/orders?address=${addressHashed}&contract_hash=${contractHash}&limit=${limit}`;
+        if(beforeId) {
+            requestUrl += `&before_id=${beforeId}`
+        }
+
+        const response = await fetch(requestUrl).then(res => res.json());
+
+        if(response.length) {
+            fetchedOrders = [...fetchedOrders, ...response];
+            if(response.length === limit) {
+                beforeId = response[response.length-1].id;
+            } else {
+                return fetchedOrders
+            }
+        } else {
+            return fetchedOrders
+        }
+    }
+
+};
+
+/**
  * Fetches orders from the given contract hashes
  * @param addressHashed
  * @param contractHashes
@@ -102,6 +140,6 @@ const fetchOrdersFromContracts = async (addressHashed, contractHashes, network) 
                }
             });*/
 
-        return await fetchOrdersFromContract(addressHashed, contractHash, network)
+        return await fetchOrdersFromContractBulkwise(addressHashed, contractHash, network)
     })))
 };
