@@ -93,6 +93,9 @@ export const convertOrders = (orders, tokens, contracts, tickers) => {
                      * -> just parse the fill amount
                      */
                     amount = parseFloat(fill_amount) / Math.pow(10, decimals);
+                    if(side === "buy") {
+                        amount = amount / price;
+                    }
                 }
 
                 let fee_symbol = '-';
