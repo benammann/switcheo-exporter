@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/switcheo-exporter/precache-manifest.e5f65f57d16d6d10477db8412a877939.js"
+  "/switcheo-exporter/precache-manifest.ea34c4c09a60a1f74468d7704e19a030.js"
 );
 
 workbox.clientsClaim();
