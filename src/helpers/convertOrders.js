@@ -107,10 +107,10 @@ export const convertOrders = (orders, tokens, contracts, tickers) => {
                 let feePaid = 0.0;
 
                 //detect current price
-                const currentPrice = tickers && tickers[splittedPair[0]] && tickers[splittedPair[0]][splittedPair[1]] ? tickers[splittedPair[0]][splittedPair[1]] : '?';
+                const currentPrice = tickers && tickers[splittedPair[0]] && tickers[splittedPair[0]][splittedPair[1]] ? tickers[splittedPair[0]][splittedPair[1]] : 'Not Listed';
 
                 //calculate gains
-                let gains = currentPrice !== '?' ? (((parseFloat(currentPrice).toFixed(8) / orderPrice) * 100 - 100)).toFixed(2) : '?';
+                let gains = currentPrice !== 'Not Listed' ? (((parseFloat(currentPrice).toFixed(8) / orderPrice) * 100 - 100)).toFixed(2) : '--,--';
 
                 if (orderType === 'SELL' && gains > 0) {
                     gains = gains * -1;
