@@ -52,6 +52,7 @@ export const columns = [
     {
         name: "Gains",
         options: {
+            display: 'false',
             filter: false,
         }
     },
