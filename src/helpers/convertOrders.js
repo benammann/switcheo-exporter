@@ -42,7 +42,12 @@ export const convertOrders = (orders, tokens, contracts, tickers) => {
                 const addressHash = order.address;
                 const contractHash = order.contract_hash;
                 const {pair, side} = order;
-                const {created_at, price, fill_amount, want_amount, fee_amount, fee_asset_id, status} = fam;
+                const {created_at, price, filled_amount, want_amount, fee_amount, fee_asset_id, status} = fam;
+                let {fill_amount} = fam;
+
+                if(!fill_amount) {
+                    fill_amount = filled_amount;
+                }
 
                 //Parse the orderDate
                 const parsedDate = new Date(Date.parse(created_at));
@@ -98,8 +103,6 @@ export const convertOrders = (orders, tokens, contracts, tickers) => {
                     }
                 }
 
-                amount = parseFloat(amount.toFixed(decimals));
-
                 let fee_symbol = '-';
                 let feePaid = 0.0;
 
@@ -134,7 +137,12 @@ export const convertOrders = (orders, tokens, contracts, tickers) => {
                 }
 
                 // Calculate total amount
-                const total = Number(parseFloat(orderPrice * amount)).toFixed(8);
+                let total = Number(parseFloat(orderPrice * amount)).toFixed(8);
+
+                if(!amount && amount !== 0.0 && status === "failed") {
+                    amount = 0.0;
+                    total = 0.0;
+                }
 
                 convertedOrders.push([
                     orderDate,
