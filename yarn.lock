@@ -6589,10 +6589,10 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
   integrity sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
 
-mui-datatables@^2.0.0-beta-41:
-  version "2.0.0-beta-41"
-  resolved "https://registry.yarnpkg.com/mui-datatables/-/mui-datatables-2.0.0-beta-41.tgz#54c89dfbb3e8e513a015557625094ac0003b4cb0"
-  integrity sha512-m4rZwpYx0siUl2kQB+bnSjlhP74YrVxoMY/x9/eZRbBnMyzQ1x+JSV6bf69wsgraC9+IcbeBKCYxScpACCV3kg==
+mui-datatables@^2.0.0-beta.58:
+  version "2.0.0-beta.58"
+  resolved "https://registry.yarnpkg.com/mui-datatables/-/mui-datatables-2.0.0-beta.58.tgz#26bb3a1f934a24dc89aabd5070efd14d85605d7d"
+  integrity sha512-Az7L+vrwhpbD11UX7zOyk4I/V75hfQDEkApHvjGny24ughlIhmjbtRyEw3OSW5rkdLo3c4eW/WZPJP+zNdoEZg==
   dependencies:
     classnames "^2.2.5"
     lodash.clonedeep "^4.5.0"
@@ -6601,7 +6601,7 @@ mui-datatables@^2.0.0-beta-41:
     lodash.memoize "^4.1.2"
     lodash.merge "^4.6.0"
     prop-types "^15.6.0"
-    react-to-print "^1.0.10"
+    react-to-print "^2.0.0-alpha.7"
 
 multicast-dns-service-types@^1.1.0:
   version "1.1.0"
@@ -8404,13 +8404,12 @@ react-scripts@2.1.1:
   optionalDependencies:
     fsevents "1.2.4"
 
-react-to-print@^1.0.10:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/react-to-print/-/react-to-print-1.0.21.tgz#f6713c5c0ac06dc8c079937e4b7cecd6dbc8d630"
-  integrity sha512-fKUSFe7ra2GbtKCNw50J9ksq+iblOxvUvYYFkxvG/EaAxpM3tcCdyBnBAP6fwYf6+MlBrYw6AAqu71+dHOVrJQ==
+react-to-print@^2.0.0-alpha.7:
+  version "2.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/react-to-print/-/react-to-print-2.0.0-alpha.7.tgz#7f21350449666187237e74a2bd8e722c3a93aabb"
+  integrity sha512-7CJ47VgJdUBu/qD6GoShGiZmdG8S0LgYU5c2p5sqC7N55zgdqcKMKWODI1UF3XzB24FtxmdVAEER++4Qzo5SIw==
   dependencies:
-    prop-types "^15.6.0"
-    react "^16.2.0"
+    prop-types "^15.6.2"
 
 react-transition-group@^2.2.1:
   version "2.5.0"
@@ -8422,7 +8421,7 @@ react-transition-group@^2.2.1:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react@^16.2.0, react@^16.6.3:
+react@^16.6.3:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react/-/react-16.6.3.tgz#25d77c91911d6bbdd23db41e70fb094cc1e0871c"
   integrity sha512-zCvmH2vbEolgKxtqXL2wmGCUxUyNheYn/C+PD1YAjfxHC54+MhdruyhO7QieQrYsYeTxrn93PM2y0jRH1zEExw==
