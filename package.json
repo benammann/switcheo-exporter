@@ -15,7 +15,7 @@
     "moment": "^2.23.0",
     "mui-datatables": "^2.0.0-beta-41",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react-dom": "^16.8.6",
     "react-redux": "^6.0.0",
     "react-router": "latest",
     "react-router-dom": "^4.3.1",
