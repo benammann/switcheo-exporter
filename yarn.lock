@@ -788,25 +788,25 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@cityofzion/neon-api@^4.3.1":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@cityofzion/neon-api/-/neon-api-4.3.1.tgz#fc5648c5d58c6c0ee353faa334dc80c307488215"
-  integrity sha512-fqEhrsnCuSL70U2JsA/lZzxr6HHFEgrnRdsN1FGOnea7KOWEasAbDdo9NUhQg68VaYZBwiGIq98usEvoHfGkWw==
+"@cityofzion/neon-api@^4.5.2":
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/@cityofzion/neon-api/-/neon-api-4.5.2.tgz#8541afb787f64d3988bdc8a29f8c4d57845a453c"
+  integrity sha512-SDoceftXbj2YBSQyzvRSQaZIbN1Ad0+3uf5ZxEJxRJzqhTnAm9yxuIhrv32eDRvCWhOHq7OqMfLiEAe9GeyVbQ==
   dependencies:
-    "@cityofzion/neon-core" "^4.3.1"
+    "@cityofzion/neon-core" "^4.5.2"
     axios "0.18.0"
 
-"@cityofzion/neon-core@^4.3.1":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@cityofzion/neon-core/-/neon-core-4.3.1.tgz#1f5965f029197ec32db4992ac46be7acade0035a"
-  integrity sha512-olBYmtpwevHnnteic7vFiEwu+TDUi5YKzZaODFgSg5uMmTUzu308JZwYw7uzTbK6/+8bE3JmxDMQP2ti+uB8Pw==
+"@cityofzion/neon-core@^4.5.2":
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/@cityofzion/neon-core/-/neon-core-4.5.2.tgz#b487b88b149caa6ff1f07addbd4b4b18ad6642a6"
+  integrity sha512-smdpq5pwX8JNw4jxK348YJJMdr2naK59CcPakNcTbUjEL3dXMKNNV17/s3uMuHiAP5J1OjQ/dkJWCoVhtgPRyA==
   dependencies:
-    "@types/bn.js" "4.11.3"
-    "@types/bs58" "3.0.30"
+    "@types/bn.js" "4.11.5"
+    "@types/bs58" "4.0.0"
     "@types/crypto-js" "3.1.43"
-    "@types/elliptic" "6.4.0"
-    "@types/loglevel" "1.5.3"
-    "@types/node" "10.12.10"
+    "@types/elliptic" "6.4.6"
+    "@types/loglevel" "1.5.4"
+    "@types/node" "11.13.4"
     axios "0.18.0"
     bignumber.js "7.2.1"
     bn.js "4.11.8"
@@ -820,21 +820,21 @@
     secure-random "1.1.1"
     wif "2.0.6"
 
-"@cityofzion/neon-js@^4.3.1":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@cityofzion/neon-js/-/neon-js-4.3.1.tgz#0cbebb55380fd33b55f37000771220916bb9b8ee"
-  integrity sha512-Bsam5enngjoWYDaRvPhEmifnbIQcWpZAZrZXcOwYVk/P78BNv0RyFNv06NQHlSWaHXWhkEuTZd0e5k9qVxBSyw==
+"@cityofzion/neon-js@^4.5.2":
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/@cityofzion/neon-js/-/neon-js-4.5.2.tgz#d1b27e78d00b129139d733e93da2b66143d21fc4"
+  integrity sha512-GBkWpHUJ3yzkEVDxF7+y2Tu0t6L1i4VSavorrxT3rTFvcs3d5kswgihfsvZZRzj2/f69vbOmJ4oTvok9V02VlQ==
   dependencies:
-    "@cityofzion/neon-api" "^4.3.1"
-    "@cityofzion/neon-core" "^4.3.1"
-    "@cityofzion/neon-nep5" "^4.3.1"
+    "@cityofzion/neon-api" "^4.5.2"
+    "@cityofzion/neon-core" "^4.5.2"
+    "@cityofzion/neon-nep5" "^4.5.2"
 
-"@cityofzion/neon-nep5@^4.3.1":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@cityofzion/neon-nep5/-/neon-nep5-4.3.1.tgz#30ff406e1887957140c012c1261d1d58ce621b97"
-  integrity sha512-udVbsFEuhIhqFpC3BC+gCZozn7HZ5W+UFPi7oicmoPyGAoVMJ7FwQkq6iunbAByCXLsmTNpGbHrNCE9XSouSDQ==
+"@cityofzion/neon-nep5@^4.5.2":
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/@cityofzion/neon-nep5/-/neon-nep5-4.5.2.tgz#5008b3826c475da082dd6d040f422333179d4445"
+  integrity sha512-pvuZRGVQDHiK8SpBwWd2rH6d2yoDs+lUZbEZ/lOB/yilksPJu/dvw6gAzAXfs/9l9ZH8tfkomoFfCn6+rxp8Yw==
   dependencies:
-    "@cityofzion/neon-core" "^4.3.1"
+    "@cityofzion/neon-core" "^4.5.2"
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
@@ -933,17 +933,24 @@
   resolved "https://registry.yarnpkg.com/@types/base-x/-/base-x-1.0.29.tgz#8a2d73e4a5c3121757a5f8870cfa4509655186b6"
   integrity sha1-ii1z5KXDEhdXpfiHDPpFCWVRhrY=
 
-"@types/bn.js@*", "@types/bn.js@4.11.3":
+"@types/bn.js@*":
   version "4.11.3"
   resolved "https://registry.yarnpkg.com/@types/bn.js/-/bn.js-4.11.3.tgz#0f09e53e98659b007d7019261ddab9178135df38"
   integrity sha512-auZ3vEo3UW8tZc9NhF0MTnutKlf+YhsfC3+dwskFcil/EoqqZF60pGuJ2v2Ae1OJTUp3DJnjOJMqrpkmKB904w==
   dependencies:
     "@types/node" "*"
 
-"@types/bs58@3.0.30":
-  version "3.0.30"
-  resolved "https://registry.yarnpkg.com/@types/bs58/-/bs58-3.0.30.tgz#916ba10992465e56f81afc735e7935fd749893e1"
-  integrity sha1-kWuhCZJGXlb4GvxzXnk1/XSYk+E=
+"@types/bn.js@4.11.5":
+  version "4.11.5"
+  resolved "https://registry.yarnpkg.com/@types/bn.js/-/bn.js-4.11.5.tgz#40e36197433f78f807524ec623afcf0169ac81dc"
+  integrity sha512-AEAZcIZga0JgVMHNtl1CprA/hXX7/wPt79AgR4XqaDt7jyj3QWYw6LPoOiznPtugDmlubUnAahMs2PFxGcQrng==
+  dependencies:
+    "@types/node" "*"
+
+"@types/bs58@4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/bs58/-/bs58-4.0.0.tgz#baec75cb007b419ede3ec6b3410d2c8f14c92fc5"
+  integrity sha512-gYX+MHD4G/R+YGYwdhG5gbJj4LsEQGr3Vg6gVDAbe7xC5Bn8dNNG2Lpo6uDX/rT5dE7VBj0rGEFuV8L0AEx4Rg==
   dependencies:
     "@types/base-x" "*"
 
@@ -952,10 +959,10 @@
   resolved "https://registry.yarnpkg.com/@types/crypto-js/-/crypto-js-3.1.43.tgz#b859347d6289ba13e347c335a4c9efa63337a748"
   integrity sha512-EHe/YKctU3IYNBsDmSOPX/7jLHPRlx8WaiDKSY9JCTnJ8XJeM4c0ZJvx+9Gxmr2s2ihI92R+3U/gNL1sq5oRuQ==
 
-"@types/elliptic@6.4.0":
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/@types/elliptic/-/elliptic-6.4.0.tgz#eed3bd9dc83184f0f08987c05eb82e58ea7fb5de"
-  integrity sha512-wf/Iecb9HDfbfnZfrk49FdRFlEb+2ZRFDVjmiRZFutQVeUMnEpDelvNCNeck85FD5GkxsBc8kJR41/wgZWfF6g==
+"@types/elliptic@6.4.6":
+  version "6.4.6"
+  resolved "https://registry.yarnpkg.com/@types/elliptic/-/elliptic-6.4.6.tgz#16fe24b8a47d98377eb97e683fa47c5831bcb4a4"
+  integrity sha512-rAQEVgU0P+VWWTjUw3yGlVeDezyObfjfWq1d1noDOKB1VldM1u6Uvz4Va6eGkWUSDRFfDCOQmiRvqHRO8EvZGg==
   dependencies:
     "@types/bn.js" "*"
 
@@ -967,15 +974,20 @@
     csstype "^2.0.0"
     indefinite-observable "^1.0.1"
 
-"@types/loglevel@1.5.3":
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/@types/loglevel/-/loglevel-1.5.3.tgz#adfce55383edc5998a2170ad581b3e23d6adb5b8"
-  integrity sha512-TzzIZihV+y9kxSg5xJMkyIkaoGkXi50isZTtGHObNHRqAAwjGNjSCNPI7AUAv0tZUKTq9f2cdkCUd/2JVZUTrA==
+"@types/loglevel@1.5.4":
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/@types/loglevel/-/loglevel-1.5.4.tgz#6e296bf20d9f6b0a3274cfb01a918f1d634e4c32"
+  integrity sha512-8dx4ckP0vndJeN+iKZwdGiapLqFjVQ3JLOt92uqK0C63acs5NcPLbUOpfXCJkKVRjZLBQjw8NIGNBSsnatFnFQ==
 
-"@types/node@*", "@types/node@10.12.10":
+"@types/node@*":
   version "10.12.10"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.10.tgz#4fa76e6598b7de3f0cb6ec3abacc4f59e5b3a2ce"
   integrity sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+
+"@types/node@11.13.4":
+  version "11.13.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.13.4.tgz#f83ec3c3e05b174b7241fadeb6688267fe5b22ca"
+  integrity sha512-+rabAZZ3Yn7tF/XPGHupKIL5EcAbrLxnTr/hgQICxbeuAfWtT0UZSfULE+ndusckBItcv4o6ZeOJplQikVcLvQ==
 
 "@types/prop-types@*":
   version "15.5.6"
